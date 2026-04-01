@@ -1,3 +1,4 @@
+# @ai-generated: gemini-3.1-pro
 from src.domain.models import Workspace, Map, Theme
 
 

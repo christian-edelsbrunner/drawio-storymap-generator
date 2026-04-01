@@ -1,3 +1,4 @@
+# @ai-generated: gemini-3.1-pro
 import yaml
 from src.domain.models import Workspace, Map, Goal, Feature, Epic, Theme
 

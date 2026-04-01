@@ -10,6 +10,7 @@ The Story Map Generator is a command-line tool that takes a hierarchical definit
 * **Interactive Diagrams**: Supports clickable URLs on cards (e.g., linking directly to a Jira or GitHub issue).
 
 ![Story Map Generator Example](docs/example.png)
+![Story Map Generator Example](docs/example_huge.png)
 
 ## Architecture
 

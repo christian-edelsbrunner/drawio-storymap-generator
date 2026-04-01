@@ -1,3 +1,4 @@
+# @ai-generated: gemini-3.1-pro
 import pytest
 import os
 import xml.etree.ElementTree as ET

@@ -9,6 +9,8 @@ The Story Map Generator is a command-line tool that takes a hierarchical definit
 * **Visual Status Indicators**: Automatically colors Epic cards based on their status (e.g., "To Do", "In Progress", "Done").
 * **Interactive Diagrams**: Supports clickable URLs on cards (e.g., linking directly to a Jira or GitHub issue).
 
+![Story Map Generator Example](docs/example.png)
+
 ## Architecture
 
 The project follows a **Ports and Adapters** architecture to decouple the core domain logic from input parsing and output rendering:

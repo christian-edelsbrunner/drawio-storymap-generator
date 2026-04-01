@@ -47,6 +47,29 @@ python src/cli.py --input sample.yaml --output my_product_map.drawio
 
 The resulting `.drawio` file can be opened directly in [diagrams.net (Draw.io)](https://app.diagrams.net/) or its desktop client.
 
+## Theme Configuration
+
+You can customize the visual appearance (colors, card sizes, and padding) of your generated Story Map by passing a custom theme YAML file using the `--theme` or `-t` flag:
+
+```bash
+python src/cli.py --input sample.yaml --theme my_dark_theme.yaml
+```
+
+Alternatively, you can define a `theme:` block directly in the root of your Story Map YAML file.
+
+```yaml
+theme:
+  card_width: 150
+  card_height: 100
+  color_epic: "#ffcccc"
+maps:
+  - id: m1
+    title: "My Map"
+    # ...
+```
+
+For more details on styling rules, check the [Styling Documentation](docs/styling.md).
+
 ## YAML Structure Example
 
 The tool expects a strictly defined hierarchy. For a full breakdown of all required and optional fields, defaults, and the rules governing swimlane logic (including the "Unassigned" default), please refer to the [YAML Schema Documentation](docs/schema.md).

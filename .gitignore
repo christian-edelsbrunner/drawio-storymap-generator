@@ -3,4 +3,5 @@ __pycache__/
 *.pyc
 .pytest_cache/
 *.drawio
+*.dtmp
 huge_map.yaml

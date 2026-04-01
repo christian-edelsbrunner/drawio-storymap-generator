@@ -10,7 +10,7 @@ The following hex color codes are used to visually identify the *type* of card o
 *   **Goals (Top Level, Backbone)**: `#dae8fc` (Light Blue)
 *   **Features (Second Level)**: `#d5e8d4` (Light Green)
 *   **Epics (Third Level)**: `#ffe6cc` (Light Orange/Peach)
-*   **Swimlane Lines/Background**: `#fff2cc` (Light Yellow/Gold)
+*   **Swimlane Dividers**: `#cccccc` (Dashed horizontal lines)
 
 *(Note: Colors are purely structural and do not represent the workflow status of an item).*
 

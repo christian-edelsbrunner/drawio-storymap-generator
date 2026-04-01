@@ -1,3 +1,4 @@
+# @ai-generated: gemini-3.1-pro
 import xml.etree.ElementTree as ET
 import os
 from src.domain.models import Workspace
@@ -94,16 +95,28 @@ class DrawioRenderer:
                     y = current_swimlane_y
                     height = 80
 
+                # Draw Swimlane Name
+                DrawioRenderer._create_cell(
+                    root=root,
+                    id=f"swimlane_label_{story_map.id}_{idx}",
+                    value=f"<b>{release}</b>",
+                    x=story_map.x,
+                    y=y - 30,
+                    width=200,
+                    height=30,
+                    style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#666666;",
+                )
+
                 # Draw Swimlane Line
                 DrawioRenderer._create_cell(
                     root=root,
-                    id=f"swimlane_{story_map.id}_{idx}",
-                    value=release,
+                    id=f"swimlane_line_{story_map.id}_{idx}",
+                    value="",
                     x=story_map.x,
-                    y=y,
+                    y=y - 10,
                     width=story_map.width,
-                    height=height,
-                    style=f"swimlane;html=1;horizontal=0;startSize=20;fillColor={theme.color_swimlane};strokeColor=#666666;",
+                    height=10,
+                    style="shape=line;html=1;strokeWidth=2;strokeColor=#cccccc;dashed=1;",
                 )
                 current_swimlane_y = y + height
 

@@ -1,0 +1,1118 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Story Map" id="story_map_1">
+    <mxGraphModel dx="4132" dy="2402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="map_MAP-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f5f5f5;strokeColor=#b3b3b3;size=15;align=center;verticalAlign=middle;fontSize=16;" value="&lt;b&gt;Huge Enterprise Project&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="6980" x="20" as="geometry" />
+        </mxCell>
+        <mxCell id="swimlane_MAP-1_0" parent="1" style="swimlane;html=1;horizontal=0;startSize=20;fillColor=none;strokeColor=#666666;" value="MVP" vertex="1">
+          <mxGeometry height="700" width="6980" x="20" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="swimlane_MAP-1_1" parent="1" style="swimlane;html=1;horizontal=0;startSize=20;fillColor=none;strokeColor=#666666;" value="Release 1.1" vertex="1">
+          <mxGeometry height="420" width="6980" x="20" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="swimlane_MAP-1_2" parent="1" style="swimlane;html=1;horizontal=0;startSize=20;fillColor=none;strokeColor=#666666;" value="Release 1.2" vertex="1">
+          <mxGeometry height="280" width="6980" x="20" y="1550" as="geometry" />
+        </mxCell>
+        <mxCell id="swimlane_MAP-1_3" parent="1" style="swimlane;html=1;horizontal=0;startSize=20;fillColor=none;strokeColor=#666666;" value="Backlog" vertex="1">
+          <mxGeometry height="80" width="6980" x="20" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="goal_GOAL-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#dae8fc;strokeColor=#6c8ebf;size=15;" value="&lt;b&gt;[GOAL-1]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Goal 1&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="1380" x="20" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="feature_FEAT-1-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-1]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.1&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="20" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-1]&lt;/b&gt;&lt;br/&gt;Epic PROJ-1 for Feature 1&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-1" id="epic_PROJ-1">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="20" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-2]&lt;/b&gt;&lt;br/&gt;Epic PROJ-2 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-2" id="epic_PROJ-2">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="20" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-3]&lt;/b&gt;&lt;br/&gt;Epic PROJ-3 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-3" id="epic_PROJ-3">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="20" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-4]&lt;/b&gt;&lt;br/&gt;Epic PROJ-4 for Feature 1&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-4" id="epic_PROJ-4">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="20" y="1400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-5]&lt;/b&gt;&lt;br/&gt;Epic PROJ-5 for Feature 1&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-5" id="epic_PROJ-5">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="20" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-2]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.2&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="160" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-6]&lt;/b&gt;&lt;br/&gt;Epic PROJ-6 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-6" id="epic_PROJ-6">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="160" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-7]&lt;/b&gt;&lt;br/&gt;Epic PROJ-7 for Feature 2&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-7" id="epic_PROJ-7">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="160" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-8]&lt;/b&gt;&lt;br/&gt;Epic PROJ-8 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-8" id="epic_PROJ-8">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="160" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-9]&lt;/b&gt;&lt;br/&gt;Epic PROJ-9 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-9" id="epic_PROJ-9">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="160" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-3]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.3&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="300" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-10]&lt;/b&gt;&lt;br/&gt;Epic PROJ-10 for Feature 3&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-10" id="epic_PROJ-10">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="300" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-11]&lt;/b&gt;&lt;br/&gt;Epic PROJ-11 for Feature 3&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-11" id="epic_PROJ-11">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="300" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-4]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.4&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="440" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-12]&lt;/b&gt;&lt;br/&gt;Epic PROJ-12 for Feature 4&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-12" id="epic_PROJ-12">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="440" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-13]&lt;/b&gt;&lt;br/&gt;Epic PROJ-13 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-13" id="epic_PROJ-13">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="440" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-14]&lt;/b&gt;&lt;br/&gt;Epic PROJ-14 for Feature 4&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-14" id="epic_PROJ-14">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="440" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-15]&lt;/b&gt;&lt;br/&gt;Epic PROJ-15 for Feature 4&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-15" id="epic_PROJ-15">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="440" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-5]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.5&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="580" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-16]&lt;/b&gt;&lt;br/&gt;Epic PROJ-16 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-16" id="epic_PROJ-16">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="580" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-17]&lt;/b&gt;&lt;br/&gt;Epic PROJ-17 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-17" id="epic_PROJ-17">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="580" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-18]&lt;/b&gt;&lt;br/&gt;Epic PROJ-18 for Feature 5&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-18" id="epic_PROJ-18">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="580" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-19]&lt;/b&gt;&lt;br/&gt;Epic PROJ-19 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-19" id="epic_PROJ-19">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="580" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-6" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-6]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.6&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="720" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-20]&lt;/b&gt;&lt;br/&gt;Epic PROJ-20 for Feature 6&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-20" id="epic_PROJ-20">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="720" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-21]&lt;/b&gt;&lt;br/&gt;Epic PROJ-21 for Feature 6&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-21" id="epic_PROJ-21">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="720" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-22]&lt;/b&gt;&lt;br/&gt;Epic PROJ-22 for Feature 6&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-22" id="epic_PROJ-22">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="720" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-23]&lt;/b&gt;&lt;br/&gt;Epic PROJ-23 for Feature 6&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-23" id="epic_PROJ-23">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="720" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-24]&lt;/b&gt;&lt;br/&gt;Epic PROJ-24 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-24" id="epic_PROJ-24">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="720" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-7" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-7]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.7&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="860" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-25]&lt;/b&gt;&lt;br/&gt;Epic PROJ-25 for Feature 7&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-25" id="epic_PROJ-25">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="860" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-26]&lt;/b&gt;&lt;br/&gt;Epic PROJ-26 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-26" id="epic_PROJ-26">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="860" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-27]&lt;/b&gt;&lt;br/&gt;Epic PROJ-27 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-27" id="epic_PROJ-27">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="860" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-28]&lt;/b&gt;&lt;br/&gt;Epic PROJ-28 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-28" id="epic_PROJ-28">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="860" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-8" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-8]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.8&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1000" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-29]&lt;/b&gt;&lt;br/&gt;Epic PROJ-29 for Feature 8&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-29" id="epic_PROJ-29">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1000" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-30]&lt;/b&gt;&lt;br/&gt;Epic PROJ-30 for Feature 8&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-30" id="epic_PROJ-30">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1000" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-9" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-9]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.9&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1140" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-31]&lt;/b&gt;&lt;br/&gt;Epic PROJ-31 for Feature 9&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-31" id="epic_PROJ-31">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1140" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-32]&lt;/b&gt;&lt;br/&gt;Epic PROJ-32 for Feature 9&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-32" id="epic_PROJ-32">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1140" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-33]&lt;/b&gt;&lt;br/&gt;Epic PROJ-33 for Feature 9&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-33" id="epic_PROJ-33">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1140" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-1-10" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-1-10]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 1.10&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="l6GLg5LZ8PRG6CSQQvOV-1" edge="1" parent="1" source="epic_PROJ-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="feature_FEAT-1-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-34]&lt;/b&gt;&lt;br/&gt;Epic PROJ-34 for Feature 10&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-34" id="epic_PROJ-34">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1280" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-35]&lt;/b&gt;&lt;br/&gt;Epic PROJ-35 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-35" id="epic_PROJ-35">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1280" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-36]&lt;/b&gt;&lt;br/&gt;Epic PROJ-36 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-36" id="epic_PROJ-36">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1280" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="goal_GOAL-2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#dae8fc;strokeColor=#6c8ebf;size=15;" value="&lt;b&gt;[GOAL-2]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Goal 2&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="1380" x="1420" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="feature_FEAT-2-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-1]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.1&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1420" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-37]&lt;/b&gt;&lt;br/&gt;Epic PROJ-37 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-37" id="epic_PROJ-37">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1420" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-38]&lt;/b&gt;&lt;br/&gt;Epic PROJ-38 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-38" id="epic_PROJ-38">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1420" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-39]&lt;/b&gt;&lt;br/&gt;Epic PROJ-39 for Feature 1&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-39" id="epic_PROJ-39">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1420" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-40]&lt;/b&gt;&lt;br/&gt;Epic PROJ-40 for Feature 1&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-40" id="epic_PROJ-40">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1420" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-2]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.2&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1560" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-41]&lt;/b&gt;&lt;br/&gt;Epic PROJ-41 for Feature 2&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-41" id="epic_PROJ-41">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1560" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-42]&lt;/b&gt;&lt;br/&gt;Epic PROJ-42 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-42" id="epic_PROJ-42">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1560" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-43]&lt;/b&gt;&lt;br/&gt;Epic PROJ-43 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-43" id="epic_PROJ-43">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1560" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-44]&lt;/b&gt;&lt;br/&gt;Epic PROJ-44 for Feature 2&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-44" id="epic_PROJ-44">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1560" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-45]&lt;/b&gt;&lt;br/&gt;Epic PROJ-45 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-45" id="epic_PROJ-45">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1560" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-3]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.3&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1700" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-46]&lt;/b&gt;&lt;br/&gt;Epic PROJ-46 for Feature 3&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-46" id="epic_PROJ-46">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1700" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-47]&lt;/b&gt;&lt;br/&gt;Epic PROJ-47 for Feature 3&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-47" id="epic_PROJ-47">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1700" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-4]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.4&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1840" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-48]&lt;/b&gt;&lt;br/&gt;Epic PROJ-48 for Feature 4&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-48" id="epic_PROJ-48">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1840" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-49]&lt;/b&gt;&lt;br/&gt;Epic PROJ-49 for Feature 4&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-49" id="epic_PROJ-49">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1840" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-50]&lt;/b&gt;&lt;br/&gt;Epic PROJ-50 for Feature 4&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-50" id="epic_PROJ-50">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1840" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-5]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.5&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="1980" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-51]&lt;/b&gt;&lt;br/&gt;Epic PROJ-51 for Feature 5&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-51" id="epic_PROJ-51">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1980" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-52]&lt;/b&gt;&lt;br/&gt;Epic PROJ-52 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-52" id="epic_PROJ-52">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1980" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-53]&lt;/b&gt;&lt;br/&gt;Epic PROJ-53 for Feature 5&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-53" id="epic_PROJ-53">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1980" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-54]&lt;/b&gt;&lt;br/&gt;Epic PROJ-54 for Feature 5&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-54" id="epic_PROJ-54">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1980" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-55]&lt;/b&gt;&lt;br/&gt;Epic PROJ-55 for Feature 5&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-55" id="epic_PROJ-55">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="1980" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-6" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-6]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.6&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="2120" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-56]&lt;/b&gt;&lt;br/&gt;Epic PROJ-56 for Feature 6&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-56" id="epic_PROJ-56">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2120" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-57]&lt;/b&gt;&lt;br/&gt;Epic PROJ-57 for Feature 6&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-57" id="epic_PROJ-57">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2120" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-58]&lt;/b&gt;&lt;br/&gt;Epic PROJ-58 for Feature 6&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-58" id="epic_PROJ-58">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2120" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-59]&lt;/b&gt;&lt;br/&gt;Epic PROJ-59 for Feature 6&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-59" id="epic_PROJ-59">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2120" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-60]&lt;/b&gt;&lt;br/&gt;Epic PROJ-60 for Feature 6&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-60" id="epic_PROJ-60">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2120" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-7" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-7]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.7&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="2260" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-61]&lt;/b&gt;&lt;br/&gt;Epic PROJ-61 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-61" id="epic_PROJ-61">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2260" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-62]&lt;/b&gt;&lt;br/&gt;Epic PROJ-62 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-62" id="epic_PROJ-62">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2260" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-63]&lt;/b&gt;&lt;br/&gt;Epic PROJ-63 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-63" id="epic_PROJ-63">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2260" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-64]&lt;/b&gt;&lt;br/&gt;Epic PROJ-64 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-64" id="epic_PROJ-64">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2260" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-65]&lt;/b&gt;&lt;br/&gt;Epic PROJ-65 for Feature 7&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-65" id="epic_PROJ-65">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2260" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-8" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-8]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.8&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="2400" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-66]&lt;/b&gt;&lt;br/&gt;Epic PROJ-66 for Feature 8&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-66" id="epic_PROJ-66">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2400" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-67]&lt;/b&gt;&lt;br/&gt;Epic PROJ-67 for Feature 8&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-67" id="epic_PROJ-67">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2400" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-9" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-9]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.9&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="2540" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-68]&lt;/b&gt;&lt;br/&gt;Epic PROJ-68 for Feature 9&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-68" id="epic_PROJ-68">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2540" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-69]&lt;/b&gt;&lt;br/&gt;Epic PROJ-69 for Feature 9&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-69" id="epic_PROJ-69">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2540" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-70]&lt;/b&gt;&lt;br/&gt;Epic PROJ-70 for Feature 9&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-70" id="epic_PROJ-70">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2540" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-71]&lt;/b&gt;&lt;br/&gt;Epic PROJ-71 for Feature 9&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-71" id="epic_PROJ-71">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2540" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-72]&lt;/b&gt;&lt;br/&gt;Epic PROJ-72 for Feature 9&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-72" id="epic_PROJ-72">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2540" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-2-10" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-2-10]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 2.10&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="2680" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-73]&lt;/b&gt;&lt;br/&gt;Epic PROJ-73 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-73" id="epic_PROJ-73">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2680" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-74]&lt;/b&gt;&lt;br/&gt;Epic PROJ-74 for Feature 10&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-74" id="epic_PROJ-74">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2680" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-75]&lt;/b&gt;&lt;br/&gt;Epic PROJ-75 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-75" id="epic_PROJ-75">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2680" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-76]&lt;/b&gt;&lt;br/&gt;Epic PROJ-76 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-76" id="epic_PROJ-76">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2680" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-77]&lt;/b&gt;&lt;br/&gt;Epic PROJ-77 for Feature 10&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-77" id="epic_PROJ-77">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2680" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="goal_GOAL-3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#dae8fc;strokeColor=#6c8ebf;size=15;" value="&lt;b&gt;[GOAL-3]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Goal 3&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="1380" x="2820" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="feature_FEAT-3-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-1]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.1&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="2820" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-78]&lt;/b&gt;&lt;br/&gt;Epic PROJ-78 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-78" id="epic_PROJ-78">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2820" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-79]&lt;/b&gt;&lt;br/&gt;Epic PROJ-79 for Feature 1&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-79" id="epic_PROJ-79">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2820" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-2]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.2&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="2960" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-80]&lt;/b&gt;&lt;br/&gt;Epic PROJ-80 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-80" id="epic_PROJ-80">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2960" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-81]&lt;/b&gt;&lt;br/&gt;Epic PROJ-81 for Feature 2&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-81" id="epic_PROJ-81">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2960" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-82]&lt;/b&gt;&lt;br/&gt;Epic PROJ-82 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-82" id="epic_PROJ-82">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="2960" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-3]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.3&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="3100" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-83]&lt;/b&gt;&lt;br/&gt;Epic PROJ-83 for Feature 3&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-83" id="epic_PROJ-83">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3100" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-84]&lt;/b&gt;&lt;br/&gt;Epic PROJ-84 for Feature 3&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-84" id="epic_PROJ-84">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3100" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-4]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.4&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="3240" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-85]&lt;/b&gt;&lt;br/&gt;Epic PROJ-85 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-85" id="epic_PROJ-85">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3240" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-86]&lt;/b&gt;&lt;br/&gt;Epic PROJ-86 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-86" id="epic_PROJ-86">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3240" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-87]&lt;/b&gt;&lt;br/&gt;Epic PROJ-87 for Feature 4&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-87" id="epic_PROJ-87">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3240" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-88]&lt;/b&gt;&lt;br/&gt;Epic PROJ-88 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-88" id="epic_PROJ-88">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3240" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-5]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.5&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="3380" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-89]&lt;/b&gt;&lt;br/&gt;Epic PROJ-89 for Feature 5&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-89" id="epic_PROJ-89">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3380" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-90]&lt;/b&gt;&lt;br/&gt;Epic PROJ-90 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-90" id="epic_PROJ-90">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3380" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-91]&lt;/b&gt;&lt;br/&gt;Epic PROJ-91 for Feature 5&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-91" id="epic_PROJ-91">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3380" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-6" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-6]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.6&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="3520" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-92]&lt;/b&gt;&lt;br/&gt;Epic PROJ-92 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-92" id="epic_PROJ-92">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3520" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-93]&lt;/b&gt;&lt;br/&gt;Epic PROJ-93 for Feature 6&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-93" id="epic_PROJ-93">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3520" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-94]&lt;/b&gt;&lt;br/&gt;Epic PROJ-94 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-94" id="epic_PROJ-94">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3520" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-95]&lt;/b&gt;&lt;br/&gt;Epic PROJ-95 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-95" id="epic_PROJ-95">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3520" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-7" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-7]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.7&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="3660" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-96]&lt;/b&gt;&lt;br/&gt;Epic PROJ-96 for Feature 7&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-96" id="epic_PROJ-96">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3660" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-97]&lt;/b&gt;&lt;br/&gt;Epic PROJ-97 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-97" id="epic_PROJ-97">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3660" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-98]&lt;/b&gt;&lt;br/&gt;Epic PROJ-98 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-98" id="epic_PROJ-98">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3660" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-99]&lt;/b&gt;&lt;br/&gt;Epic PROJ-99 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-99" id="epic_PROJ-99">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3660" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-8" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-8]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.8&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="3800" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-100]&lt;/b&gt;&lt;br/&gt;Epic PROJ-100 for Feature 8&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-100" id="epic_PROJ-100">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3800" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-101]&lt;/b&gt;&lt;br/&gt;Epic PROJ-101 for Feature 8&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-101" id="epic_PROJ-101">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3800" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-102]&lt;/b&gt;&lt;br/&gt;Epic PROJ-102 for Feature 8&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-102" id="epic_PROJ-102">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3800" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-9" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-9]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.9&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="3940" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-103]&lt;/b&gt;&lt;br/&gt;Epic PROJ-103 for Feature 9&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-103" id="epic_PROJ-103">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3940" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-104]&lt;/b&gt;&lt;br/&gt;Epic PROJ-104 for Feature 9&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-104" id="epic_PROJ-104">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3940" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-105]&lt;/b&gt;&lt;br/&gt;Epic PROJ-105 for Feature 9&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-105" id="epic_PROJ-105">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="3940" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-3-10" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-3-10]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 3.10&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="4080" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-106]&lt;/b&gt;&lt;br/&gt;Epic PROJ-106 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-106" id="epic_PROJ-106">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4080" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-107]&lt;/b&gt;&lt;br/&gt;Epic PROJ-107 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-107" id="epic_PROJ-107">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4080" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-108]&lt;/b&gt;&lt;br/&gt;Epic PROJ-108 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-108" id="epic_PROJ-108">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4080" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-109]&lt;/b&gt;&lt;br/&gt;Epic PROJ-109 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-109" id="epic_PROJ-109">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4080" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-110]&lt;/b&gt;&lt;br/&gt;Epic PROJ-110 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-110" id="epic_PROJ-110">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4080" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="goal_GOAL-4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#dae8fc;strokeColor=#6c8ebf;size=15;" value="&lt;b&gt;[GOAL-4]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Goal 4&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="1380" x="4220" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="feature_FEAT-4-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-1]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.1&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="4220" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-111]&lt;/b&gt;&lt;br/&gt;Epic PROJ-111 for Feature 1&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-111" id="epic_PROJ-111">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4220" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-112]&lt;/b&gt;&lt;br/&gt;Epic PROJ-112 for Feature 1&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-112" id="epic_PROJ-112">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4220" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-113]&lt;/b&gt;&lt;br/&gt;Epic PROJ-113 for Feature 1&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-113" id="epic_PROJ-113">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4220" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-114]&lt;/b&gt;&lt;br/&gt;Epic PROJ-114 for Feature 1&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-114" id="epic_PROJ-114">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4220" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-115]&lt;/b&gt;&lt;br/&gt;Epic PROJ-115 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-115" id="epic_PROJ-115">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4220" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-2]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.2&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="4360" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-116]&lt;/b&gt;&lt;br/&gt;Epic PROJ-116 for Feature 2&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-116" id="epic_PROJ-116">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4360" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-117]&lt;/b&gt;&lt;br/&gt;Epic PROJ-117 for Feature 2&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-117" id="epic_PROJ-117">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4360" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-3]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.3&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="4500" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-118]&lt;/b&gt;&lt;br/&gt;Epic PROJ-118 for Feature 3&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-118" id="epic_PROJ-118">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4500" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-119]&lt;/b&gt;&lt;br/&gt;Epic PROJ-119 for Feature 3&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-119" id="epic_PROJ-119">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4500" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-120]&lt;/b&gt;&lt;br/&gt;Epic PROJ-120 for Feature 3&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-120" id="epic_PROJ-120">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4500" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-121]&lt;/b&gt;&lt;br/&gt;Epic PROJ-121 for Feature 3&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-121" id="epic_PROJ-121">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4500" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-122]&lt;/b&gt;&lt;br/&gt;Epic PROJ-122 for Feature 3&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-122" id="epic_PROJ-122">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4500" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-4]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.4&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="4640" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-123]&lt;/b&gt;&lt;br/&gt;Epic PROJ-123 for Feature 4&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-123" id="epic_PROJ-123">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4640" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-124]&lt;/b&gt;&lt;br/&gt;Epic PROJ-124 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-124" id="epic_PROJ-124">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4640" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-125]&lt;/b&gt;&lt;br/&gt;Epic PROJ-125 for Feature 4&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-125" id="epic_PROJ-125">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4640" y="1400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-126]&lt;/b&gt;&lt;br/&gt;Epic PROJ-126 for Feature 4&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-126" id="epic_PROJ-126">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4640" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-5]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.5&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="4780" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-127]&lt;/b&gt;&lt;br/&gt;Epic PROJ-127 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-127" id="epic_PROJ-127">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4780" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-128]&lt;/b&gt;&lt;br/&gt;Epic PROJ-128 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-128" id="epic_PROJ-128">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4780" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-129]&lt;/b&gt;&lt;br/&gt;Epic PROJ-129 for Feature 5&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-129" id="epic_PROJ-129">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4780" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-130]&lt;/b&gt;&lt;br/&gt;Epic PROJ-130 for Feature 5&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-130" id="epic_PROJ-130">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4780" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-6" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-6]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.6&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="4920" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-131]&lt;/b&gt;&lt;br/&gt;Epic PROJ-131 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-131" id="epic_PROJ-131">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4920" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-132]&lt;/b&gt;&lt;br/&gt;Epic PROJ-132 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-132" id="epic_PROJ-132">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4920" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-133]&lt;/b&gt;&lt;br/&gt;Epic PROJ-133 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-133" id="epic_PROJ-133">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4920" y="1700" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-134]&lt;/b&gt;&lt;br/&gt;Epic PROJ-134 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-134" id="epic_PROJ-134">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="4920" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-7" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-7]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.7&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="5060" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-135]&lt;/b&gt;&lt;br/&gt;Epic PROJ-135 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-135" id="epic_PROJ-135">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5060" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-136]&lt;/b&gt;&lt;br/&gt;Epic PROJ-136 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-136" id="epic_PROJ-136">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5060" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-137]&lt;/b&gt;&lt;br/&gt;Epic PROJ-137 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-137" id="epic_PROJ-137">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5060" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-8" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-8]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.8&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="5200" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-138]&lt;/b&gt;&lt;br/&gt;Epic PROJ-138 for Feature 8&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-138" id="epic_PROJ-138">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5200" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-139]&lt;/b&gt;&lt;br/&gt;Epic PROJ-139 for Feature 8&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-139" id="epic_PROJ-139">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5200" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-140]&lt;/b&gt;&lt;br/&gt;Epic PROJ-140 for Feature 8&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-140" id="epic_PROJ-140">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5200" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-141]&lt;/b&gt;&lt;br/&gt;Epic PROJ-141 for Feature 8&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-141" id="epic_PROJ-141">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5200" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-9" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-9]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.9&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="5340" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-142]&lt;/b&gt;&lt;br/&gt;Epic PROJ-142 for Feature 9&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-142" id="epic_PROJ-142">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5340" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-143]&lt;/b&gt;&lt;br/&gt;Epic PROJ-143 for Feature 9&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-143" id="epic_PROJ-143">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5340" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-4-10" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-4-10]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 4.10&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="5480" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-144]&lt;/b&gt;&lt;br/&gt;Epic PROJ-144 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-144" id="epic_PROJ-144">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5480" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-145]&lt;/b&gt;&lt;br/&gt;Epic PROJ-145 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-145" id="epic_PROJ-145">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5480" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-146]&lt;/b&gt;&lt;br/&gt;Epic PROJ-146 for Feature 10&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-146" id="epic_PROJ-146">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5480" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-147]&lt;/b&gt;&lt;br/&gt;Epic PROJ-147 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-147" id="epic_PROJ-147">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5480" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="goal_GOAL-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#dae8fc;strokeColor=#6c8ebf;size=15;" value="&lt;b&gt;[GOAL-5]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Goal 5&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="1380" x="5620" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="feature_FEAT-5-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-1]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.1&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="5620" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-148]&lt;/b&gt;&lt;br/&gt;Epic PROJ-148 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-148" id="epic_PROJ-148">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5620" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-149]&lt;/b&gt;&lt;br/&gt;Epic PROJ-149 for Feature 1&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-149" id="epic_PROJ-149">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5620" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-150]&lt;/b&gt;&lt;br/&gt;Epic PROJ-150 for Feature 1&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-150" id="epic_PROJ-150">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5620" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-2]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.2&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="5760" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-151]&lt;/b&gt;&lt;br/&gt;Epic PROJ-151 for Feature 2&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-151" id="epic_PROJ-151">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5760" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-152]&lt;/b&gt;&lt;br/&gt;Epic PROJ-152 for Feature 2&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-152" id="epic_PROJ-152">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5760" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-153]&lt;/b&gt;&lt;br/&gt;Epic PROJ-153 for Feature 2&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-153" id="epic_PROJ-153">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5760" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-3]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.3&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="5900" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-154]&lt;/b&gt;&lt;br/&gt;Epic PROJ-154 for Feature 3&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-154" id="epic_PROJ-154">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5900" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-155]&lt;/b&gt;&lt;br/&gt;Epic PROJ-155 for Feature 3&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-155" id="epic_PROJ-155">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="5900" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-4" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-4]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.4&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="6040" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-156]&lt;/b&gt;&lt;br/&gt;Epic PROJ-156 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-156" id="epic_PROJ-156">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6040" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-157]&lt;/b&gt;&lt;br/&gt;Epic PROJ-157 for Feature 4&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-157" id="epic_PROJ-157">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6040" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-158]&lt;/b&gt;&lt;br/&gt;Epic PROJ-158 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-158" id="epic_PROJ-158">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6040" y="1260" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-159]&lt;/b&gt;&lt;br/&gt;Epic PROJ-159 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-159" id="epic_PROJ-159">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6040" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-160]&lt;/b&gt;&lt;br/&gt;Epic PROJ-160 for Feature 4&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-160" id="epic_PROJ-160">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6040" y="1400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-5]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.5&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="6180" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-161]&lt;/b&gt;&lt;br/&gt;Epic PROJ-161 for Feature 5&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-161" id="epic_PROJ-161">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6180" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-162]&lt;/b&gt;&lt;br/&gt;Epic PROJ-162 for Feature 5&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-162" id="epic_PROJ-162">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6180" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-163]&lt;/b&gt;&lt;br/&gt;Epic PROJ-163 for Feature 5&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-163" id="epic_PROJ-163">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6180" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-6" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-6]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.6&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="6320" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-164]&lt;/b&gt;&lt;br/&gt;Epic PROJ-164 for Feature 6&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-164" id="epic_PROJ-164">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6320" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-165]&lt;/b&gt;&lt;br/&gt;Epic PROJ-165 for Feature 6&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-165" id="epic_PROJ-165">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6320" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-166]&lt;/b&gt;&lt;br/&gt;Epic PROJ-166 for Feature 6&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-166" id="epic_PROJ-166">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6320" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-167]&lt;/b&gt;&lt;br/&gt;Epic PROJ-167 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-167" id="epic_PROJ-167">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6320" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-168]&lt;/b&gt;&lt;br/&gt;Epic PROJ-168 for Feature 6&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-168" id="epic_PROJ-168">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6320" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-7" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-7]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.7&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="6460" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-169]&lt;/b&gt;&lt;br/&gt;Epic PROJ-169 for Feature 7&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-169" id="epic_PROJ-169">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6460" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-170]&lt;/b&gt;&lt;br/&gt;Epic PROJ-170 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-170" id="epic_PROJ-170">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6460" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-171]&lt;/b&gt;&lt;br/&gt;Epic PROJ-171 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-171" id="epic_PROJ-171">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6460" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-172]&lt;/b&gt;&lt;br/&gt;Epic PROJ-172 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-172" id="epic_PROJ-172">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6460" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-173]&lt;/b&gt;&lt;br/&gt;Epic PROJ-173 for Feature 7&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-173" id="epic_PROJ-173">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6460" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-8" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-8]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.8&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="6600" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-174]&lt;/b&gt;&lt;br/&gt;Epic PROJ-174 for Feature 8&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-174" id="epic_PROJ-174">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6600" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-175]&lt;/b&gt;&lt;br/&gt;Epic PROJ-175 for Feature 8&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-175" id="epic_PROJ-175">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6600" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-176]&lt;/b&gt;&lt;br/&gt;Epic PROJ-176 for Feature 8&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-176" id="epic_PROJ-176">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6600" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-177]&lt;/b&gt;&lt;br/&gt;Epic PROJ-177 for Feature 8&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-177" id="epic_PROJ-177">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6600" y="820" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-178]&lt;/b&gt;&lt;br/&gt;Epic PROJ-178 for Feature 8&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-178" id="epic_PROJ-178">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6600" y="960" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-9" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-9]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.9&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="6740" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-179]&lt;/b&gt;&lt;br/&gt;Epic PROJ-179 for Feature 9&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-179" id="epic_PROJ-179">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6740" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-180]&lt;/b&gt;&lt;br/&gt;Epic PROJ-180 for Feature 9&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-180" id="epic_PROJ-180">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6740" y="1700" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-181]&lt;/b&gt;&lt;br/&gt;Epic PROJ-181 for Feature 9&lt;br/&gt;&lt;i&gt;Done&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-181" id="epic_PROJ-181">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6740" y="1120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="feature_FEAT-5-10" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;size=15;" value="&lt;b&gt;[FEAT-5-10]&lt;/b&gt;&lt;br/&gt;&lt;b&gt;Feature 5.10&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="6880" y="220" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;b&gt;[PROJ-182]&lt;/b&gt;&lt;br/&gt;Epic PROJ-182 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-182" id="epic_PROJ-182">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6880" y="400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-183]&lt;/b&gt;&lt;br/&gt;Epic PROJ-183 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-183" id="epic_PROJ-183">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6880" y="1560" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-184]&lt;/b&gt;&lt;br/&gt;Epic PROJ-184 for Feature 10&lt;br/&gt;&lt;i&gt;To Do&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-184" id="epic_PROJ-184">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6880" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;b&gt;[PROJ-185]&lt;/b&gt;&lt;br/&gt;Epic PROJ-185 for Feature 10&lt;br/&gt;&lt;i&gt;In Progress&lt;/i&gt;" link="https://jira.company.com/browse/PROJ-185" id="epic_PROJ-185">
+          <mxCell parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d6b656;size=15;" vertex="1">
+            <mxGeometry height="120" width="120" x="6880" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,47 @@
+maps:
+  - id: m1
+    title: "E-Commerce Launch"
+    releases: ["MVP", "Q3 Release", "Backlog"]
+    goals:
+      - id: g1
+        title: "User Management"
+        features:
+          - id: f1
+            title: "Authentication"
+            status: "In Progress"
+            epics:
+              - id: e1
+                title: "SSO Integration"
+                status: "Done"
+                url: "https://jira.com/ticket-1"
+                release: "MVP"
+              - id: e2
+                title: "Password Reset Flow"
+                status: "To Do"
+                url: "https://jira.com/ticket-2"
+                release: "Q3 Release"
+      - id: g2
+        title: "Shopping Experience"
+        features:
+          - id: f2
+            title: "Product Catalog"
+            epics:
+              - id: e3
+                title: "Search functionality"
+                status: "Done"
+                release: "MVP"
+              - id: e4
+                title: "Advanced Filters"
+                status: "To Do"
+                release: "Q3 Release"
+          - id: f3
+            title: "Shopping Cart"
+            epics:
+              - id: e5
+                title: "Add to cart"
+                status: "In Progress"
+                release: "MVP"
+              - id: e6
+                title: "Save for later"
+                status: "To Do"
+                release: "Backlog"

@@ -1,29 +1,23 @@
-from src.domain.models import Workspace, Map
+from src.domain.models import Workspace, Map, Theme
 
 
 class LayoutEngine:
-    PADDING_X = 20
-    PADDING_Y = 20
-    CARD_WIDTH = 120
-    CARD_HEIGHT = 120
-    HEADER_HEIGHT = 60
-    SWIMLANE_MARGIN = 40
-
     @staticmethod
     def calculate(workspace: Workspace):
+        theme = workspace.theme
         current_y = 0
         for story_map in workspace.maps:
-            LayoutEngine._calculate_map(story_map, start_y=current_y)
-            current_y = story_map.y + story_map.height + LayoutEngine.PADDING_Y * 2
+            LayoutEngine._calculate_map(story_map, start_y=current_y, theme=theme)
+            current_y = story_map.y + story_map.height + theme.padding_y * 2
 
     @staticmethod
-    def _calculate_map(story_map: Map, start_y: int):
-        story_map.x = LayoutEngine.PADDING_X
+    def _calculate_map(story_map: Map, start_y: int, theme: Theme):
+        story_map.x = theme.padding_x
         story_map.y = start_y
 
         # We start laying out goals underneath the map title header
-        current_x = LayoutEngine.PADDING_X
-        goal_start_y = start_y + LayoutEngine.HEADER_HEIGHT + LayoutEngine.PADDING_Y
+        current_x = theme.padding_x
+        goal_start_y = start_y + theme.header_height + theme.padding_y
 
         # Backbone Layout (Goals and Features)
         for goal in story_map.goals:
@@ -31,22 +25,22 @@ class LayoutEngine:
             goal.y = goal_start_y
 
             feature_start_x = current_x
-            feature_start_y = goal.y + LayoutEngine.CARD_HEIGHT + LayoutEngine.PADDING_Y
+            feature_start_y = goal.y + theme.card_height + theme.padding_y
 
             goal_width = 0
 
             for feature in goal.features:
                 feature.x = feature_start_x
                 feature.y = feature_start_y
-                feature_start_x += LayoutEngine.CARD_WIDTH + LayoutEngine.PADDING_X
-                goal_width += LayoutEngine.CARD_WIDTH + LayoutEngine.PADDING_X
+                feature_start_x += theme.card_width + theme.padding_x
+                goal_width += theme.card_width + theme.padding_x
 
             if goal.features:
-                goal.width = goal_width - LayoutEngine.PADDING_X
+                goal.width = goal_width - theme.padding_x
                 current_x = feature_start_x
             else:
-                goal.width = LayoutEngine.CARD_WIDTH
-                current_x += LayoutEngine.CARD_WIDTH + LayoutEngine.PADDING_X
+                goal.width = theme.card_width
+                current_x += theme.card_width + theme.padding_x
 
         # Swimlane Layout (Releases and Epics)
         # Determine unique releases across all epics in this map if not explicitly defined
@@ -66,12 +60,11 @@ class LayoutEngine:
 
         swimlane_y = (
             goal_start_y
-            + (LayoutEngine.CARD_HEIGHT + LayoutEngine.PADDING_Y) * 2
-            + LayoutEngine.SWIMLANE_MARGIN
+            + (theme.card_height + theme.padding_y) * 2
+            + theme.swimlane_margin
         )
         swimlane_heights = {
-            release: LayoutEngine.CARD_HEIGHT + LayoutEngine.PADDING_Y
-            for release in releases
+            release: theme.card_height + theme.padding_y for release in releases
         }
 
         # First pass to find max height needed for each swimlane based on number of epics in a single feature column
@@ -91,8 +84,7 @@ class LayoutEngine:
                 max_epics = max(swimlane_feature_counts[release].values())
             if max_epics > 0:
                 swimlane_heights[release] = (
-                    max_epics * (LayoutEngine.CARD_HEIGHT + LayoutEngine.PADDING_Y)
-                    + LayoutEngine.PADDING_Y
+                    max_epics * (theme.card_height + theme.padding_y) + theme.padding_y
                 )
 
         # Assign Epics to coordinates
@@ -110,9 +102,9 @@ class LayoutEngine:
                     epic_index = epic_counts.get(release, 0)
                     epic.x = feature.x
                     epic.y = swimlane_y_positions[release] + epic_index * (
-                        LayoutEngine.CARD_HEIGHT + LayoutEngine.PADDING_Y
+                        theme.card_height + theme.padding_y
                     )
                     epic_counts[release] = epic_index + 1
 
-        story_map.width = current_x - LayoutEngine.PADDING_X - story_map.x
+        story_map.width = current_x - theme.padding_x - story_map.x
         story_map.height = current_swimlane_y - start_y

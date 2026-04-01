@@ -19,35 +19,34 @@ def test_layout_engine_backbone():
 
     LayoutEngine.calculate(workspace)
 
+    theme = workspace.theme
+
     # Map title check
-    assert story_map.x == LayoutEngine.PADDING_X
+    assert story_map.x == theme.padding_x
     assert story_map.y == 0
 
     # Goal check
-    assert goal.x == LayoutEngine.PADDING_X
-    assert goal.y == story_map.y + LayoutEngine.HEADER_HEIGHT + LayoutEngine.PADDING_Y
-    assert goal.width == (LayoutEngine.CARD_WIDTH * 2) + LayoutEngine.PADDING_X
+    assert goal.x == theme.padding_x
+    assert goal.y == story_map.y + theme.header_height + theme.padding_y
+    assert goal.width == (theme.card_width * 2) + theme.padding_x
 
     # Feature checks (side-by-side)
-    assert feature1.x == LayoutEngine.PADDING_X
-    assert feature1.y == goal.y + LayoutEngine.CARD_HEIGHT + LayoutEngine.PADDING_Y
+    assert feature1.x == theme.padding_x
+    assert feature1.y == goal.y + theme.card_height + theme.padding_y
 
-    assert feature2.x == feature1.x + LayoutEngine.CARD_WIDTH + LayoutEngine.PADDING_X
+    assert feature2.x == feature1.x + theme.card_width + theme.padding_x
     assert feature2.y == feature1.y
 
     # Epic checks (stacked vertically in the MVP swimlane under feature1)
     swimlane_y = (
-        feature1.y
-        + LayoutEngine.CARD_HEIGHT
-        + LayoutEngine.PADDING_Y
-        + LayoutEngine.SWIMLANE_MARGIN
+        feature1.y + theme.card_height + theme.padding_y + theme.swimlane_margin
     )
 
     assert epic1.x == feature1.x
     assert epic1.y == swimlane_y
 
     assert epic2.x == feature1.x
-    assert epic2.y == swimlane_y + LayoutEngine.CARD_HEIGHT + LayoutEngine.PADDING_Y
+    assert epic2.y == swimlane_y + theme.card_height + theme.padding_y
 
     assert story_map.width == goal.width
     assert story_map.height > 0

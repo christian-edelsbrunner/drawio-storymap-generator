@@ -1,6 +1,7 @@
 import argparse
 import sys
 import os
+import yaml
 
 # Add project root to python path if run directly
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -23,11 +24,18 @@ def main():
         required=False,
         help="Path to the output .drawio file (defaults to input filename with .drawio extension).",
     )
+    parser.add_argument(
+        "--theme",
+        "-t",
+        required=False,
+        help="Path to an optional theme YAML file.",
+    )
 
     args = parser.parse_args()
 
     input_path = args.input
     output_path = args.output
+    theme_path = args.theme
 
     if not output_path:
         base_name = os.path.splitext(os.path.basename(input_path))[0]
@@ -37,9 +45,23 @@ def main():
         print(f"Error: Input file '{input_path}' does not exist.", file=sys.stderr)
         sys.exit(1)
 
+    if theme_path and not os.path.exists(theme_path):
+        print(f"Error: Theme file '{theme_path}' does not exist.", file=sys.stderr)
+        sys.exit(1)
+
     try:
         print(f"Parsing YAML file: {input_path}")
         workspace = YamlParser.parse(input_path)
+
+        if theme_path:
+            print(f"Loading theme from: {theme_path}")
+            with open(theme_path, "r") as tf:
+                theme_data = yaml.safe_load(tf)
+                if theme_data and isinstance(theme_data, dict):
+                    # Override the theme loaded from the main YAML
+                    for key, value in theme_data.items():
+                        if hasattr(workspace.theme, key):
+                            setattr(workspace.theme, key, value)
 
         print("Calculating spatial layout...")
         LayoutEngine.calculate(workspace)

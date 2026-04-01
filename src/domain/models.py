@@ -63,7 +63,25 @@ class Map(LayoutMixin):
 
 
 @dataclass(kw_only=True)
+class Theme:
+    """Styling and layout configuration."""
+
+    card_width: int = 120
+    card_height: int = 120
+    padding_x: int = 20
+    padding_y: int = 20
+    header_height: int = 60
+    swimlane_margin: int = 40
+    color_map: str = "#f5f5f5"
+    color_goal: str = "#dae8fc"
+    color_feature: str = "#d5e8d4"
+    color_epic: str = "#ffe6cc"
+    color_swimlane: str = "#fff2cc"
+
+
+@dataclass(kw_only=True)
 class Workspace:
     """Top-level container to support importing and rendering multiple maps in parallel."""
 
     maps: List[Map] = field(default_factory=list)
+    theme: Theme = field(default_factory=Theme)

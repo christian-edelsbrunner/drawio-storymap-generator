@@ -4,16 +4,9 @@ from src.domain.models import Workspace
 
 
 class DrawioRenderer:
-    COLORS = {
-        "map": "#f5f5f5",
-        "goal": "#dae8fc",
-        "feature": "#d5e8d4",
-        "epic": "#ffe6cc",
-        "swimlane": "#fff2cc",
-    }
-
     @staticmethod
     def render(workspace: Workspace, output_path: str):
+        theme = workspace.theme
         mxfile = ET.Element(
             "mxfile", host="StoryMapGenerator", version="21.6.5", type="device"
         )
@@ -52,14 +45,21 @@ class DrawioRenderer:
                 x=story_map.x,
                 y=story_map.y,
                 width=story_map.width,
-                height=60,
-                style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={DrawioRenderer.COLORS['map']};strokeColor=#b3b3b3;size=15;align=center;verticalAlign=middle;fontSize=16;",
+                height=theme.header_height,
+                style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_map};strokeColor=#b3b3b3;size=15;align=center;verticalAlign=middle;fontSize=16;",
                 url=story_map.url,
             )
 
             # Draw Swimlanes
             current_swimlane_y = (
-                story_map.y + 60 + 20 + 120 + 20 + 120 + 20 + 40
+                story_map.y
+                + theme.header_height
+                + theme.padding_y
+                + theme.card_height
+                + theme.padding_y
+                + theme.card_height
+                + theme.padding_y
+                + theme.swimlane_margin
             )  # Based on Layout Engine (HEADER_HEIGHT + padding + goal + padding + feature + padding + SWIMLANE_MARGIN)
             # We don't have swimlane heights exactly stored, but we can draw a separator line or bounding box based on the epics in it.
             # To be accurate with heights, we'll iterate through the epics and find max Y in each swimlane.
@@ -103,7 +103,7 @@ class DrawioRenderer:
                     y=y,
                     width=story_map.width,
                     height=height,
-                    style="swimlane;html=1;horizontal=0;startSize=20;fillColor=none;strokeColor=#666666;",
+                    style=f"swimlane;html=1;horizontal=0;startSize=20;fillColor={theme.color_swimlane};strokeColor=#666666;",
                 )
                 current_swimlane_y = y + height
 
@@ -117,7 +117,7 @@ class DrawioRenderer:
                     y=goal.y,
                     width=goal.width,
                     height=goal.height,
-                    style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={DrawioRenderer.COLORS['goal']};strokeColor=#6c8ebf;size=15;",
+                    style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_goal};strokeColor=#6c8ebf;size=15;",
                     url=goal.url,
                 )
 
@@ -131,7 +131,7 @@ class DrawioRenderer:
                         y=feature.y,
                         width=feature.width,
                         height=feature.height,
-                        style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={DrawioRenderer.COLORS['feature']};strokeColor=#82b366;size=15;",
+                        style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_feature};strokeColor=#82b366;size=15;",
                         url=feature.url,
                     )
 
@@ -149,7 +149,7 @@ class DrawioRenderer:
                             y=epic.y,
                             width=epic.width,
                             height=epic.height,
-                            style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={DrawioRenderer.COLORS['epic']};strokeColor=#d6b656;size=15;",
+                            style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_epic};strokeColor=#d6b656;size=15;",
                             url=epic.url,
                         )
 

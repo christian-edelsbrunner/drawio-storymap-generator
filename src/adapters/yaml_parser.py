@@ -1,5 +1,5 @@
 import yaml
-from src.domain.models import Workspace, Map, Goal, Feature, Epic
+from src.domain.models import Workspace, Map, Goal, Feature, Epic, Theme
 
 
 class StoryMapParseError(Exception):
@@ -26,7 +26,15 @@ class YamlParser:
         for map_data in maps_data:
             workspace_maps.append(YamlParser._parse_map(map_data))
 
-        return Workspace(maps=workspace_maps)
+        theme_data = data.get("theme", {})
+        theme = Theme()
+        if theme_data:
+            # We explicitly update the theme dataclass attributes if provided
+            for key, value in theme_data.items():
+                if hasattr(theme, key):
+                    setattr(theme, key, value)
+
+        return Workspace(maps=workspace_maps, theme=theme)
 
     @staticmethod
     def _parse_map(data: dict) -> Map:

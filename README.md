@@ -49,7 +49,9 @@ The resulting `.drawio` file can be opened directly in [diagrams.net (Draw.io)](
 
 ## YAML Structure Example
 
-The tool expects a strictly defined hierarchy. Here is an example of the supported structure:
+The tool expects a strictly defined hierarchy. For a full breakdown of all required and optional fields, defaults, and the rules governing swimlane logic (including the "Unassigned" default), please refer to the [YAML Schema Documentation](docs/schema.md).
+
+Here is a simplified example of the supported structure:
 
 ```yaml
 maps:

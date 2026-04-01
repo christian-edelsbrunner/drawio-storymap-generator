@@ -6,7 +6,7 @@ The Story Map Generator is a command-line tool that takes a hierarchical definit
 
 * **Docs-as-Code Approach**: Maintain your product backlog and story maps in source control using simple YAML.
 * **Automated Layout Engine**: Automatically calculates grid coordinates, placing Goals and Features as a horizontal backbone, and organizing Epics vertically into their respective Release swimlanes.
-* **Visual Status Indicators**: Automatically colors Epic cards based on their status (e.g., "To Do", "In Progress", "Done").
+* **Visual Status Indicators**: Displays the status text directly on the Epic cards.
 * **Interactive Diagrams**: Supports clickable URLs on cards (e.g., linking directly to a Jira or GitHub issue).
 
 ![Story Map Generator Example](docs/example.png)

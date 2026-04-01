@@ -11,7 +11,7 @@
     *   Places Epics in the intersection of their parent Feature's column and their assigned Release's row.
 *   **F4. Draw.io Generation**: Renders the diagram visually into a Draw.io compatible format.
     *   Adds clickable links to shapes if a `url` is provided.
-    *   Visually indicates `status` (e.g., dynamically changing the background color of the box for "Done" vs "To Do").
+    *   Visually indicates `status` (e.g., displaying the status text directly on the card).
 
 ## Future Features (Phase 2+)
 

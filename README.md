@@ -115,3 +115,7 @@ To run the unit tests, use `pytest`:
 ```bash
 PYTHONPATH=. pytest
 ```
+
+# Future Outlook
+* Jira Importer: Use a Jira Issue structure to render Maps
+* Compare Story maps (that got modified manually)

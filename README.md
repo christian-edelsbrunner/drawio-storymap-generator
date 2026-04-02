@@ -1,4 +1,24 @@
-# Story Map Generator
+# Draw.io Story Map Generator
+
+*Probably you are part of a team who has assembled a lot of input about your Goals, Epics, and Features, and you would love to have a visual overview? Or perhaps this input is already sitting in Jira?*
+
+This is where the **Draw.io Story Map Generator** jumps in.
+
+**🧩 The Situation**
+* **You have:** A vision of your software broken down into Goals, Epics, and Features.
+* **You have as input:** A Jira backlog, an Excel list, or a written list in Confluence/Markdown.
+* **You need:** A visual, easily digestible Story Map in draw.io format.
+
+**🚀 How it works**
+Currently, you can write your structure down in a simple, structured way (YAML). The generator takes this input and automatically calculates layouts, swimlanes, and cards.
+*(Planned Feature: The tool will automatically pull from Jira, convert to YAML, and generate the map for you).*
+
+**🎉 Outcome**
+A beautiful, structured, and clickable Story Map in `.drawio` format!
+
+---
+
+## What it is (Technical Overview)
 
 The Story Map Generator is a command-line tool that takes a hierarchical definition of an agile Story Map written in YAML and automatically generates a visually structured, clickable `.drawio` diagram.
 

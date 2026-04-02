@@ -122,37 +122,58 @@ class DrawioRenderer:
 
             # Draw Goals
             for goal in story_map.goals:
+                goal_value = (
+                    '<table style="width:100%;height:100%;" border="0" cellpadding="0" cellspacing="0">'
+                    f'<tr><td align="center" valign="top" height="15"><b><font style="font-size: 16px;">[{goal.id}]</font></b></td></tr>'
+                    f'<tr><td align="center" valign="middle"><b>{goal.title}</b></td></tr>'
+                    "</table>"
+                )
                 DrawioRenderer._create_cell(
                     root=root,
                     id=f"goal_{goal.id}",
-                    value=f"<b>[{goal.id}]</b><br/><b>{goal.title}</b>",
+                    value=goal_value,
                     x=goal.x,
                     y=goal.y,
                     width=goal.width,
                     height=goal.height,
-                    style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_goal};strokeColor=#6c8ebf;size=15;",
+                    style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_goal};strokeColor=#6c8ebf;size=15;spacingTop=2;",
                     url=goal.url,
                 )
 
                 # Draw Features
                 for feature in goal.features:
+                    feature_value = (
+                        '<table style="width:100%;height:100%;" border="0" cellpadding="0" cellspacing="0">'
+                        f'<tr><td align="center" valign="top" height="15"><b><font style="font-size: 14px;">[{feature.id}]</font></b></td></tr>'
+                        f'<tr><td align="center" valign="middle"><b>{feature.title}</b></td></tr>'
+                        "</table>"
+                    )
                     DrawioRenderer._create_cell(
                         root=root,
                         id=f"feature_{feature.id}",
-                        value=f"<b>[{feature.id}]</b><br/><b>{feature.title}</b>",
+                        value=feature_value,
                         x=feature.x,
                         y=feature.y,
                         width=feature.width,
                         height=feature.height,
-                        style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_feature};strokeColor=#82b366;size=15;",
+                        style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_feature};strokeColor=#82b366;size=15;spacingTop=2;",
                         url=feature.url,
                     )
 
                     # Draw Epics
                     for epic in feature.epics:
-                        epic_value = f"<b>[{epic.id}]</b><br/>{epic.title}"
+                        status_html = ""
                         if epic.status:
-                            epic_value += f"<br/><i>{epic.status}</i>"
+                            status_color = DrawioRenderer._get_status_color(epic.status)
+                            status_html = f'<tr><td align="right" valign="bottom" height="15"><font color="{status_color}"><i>{epic.status}</i></font></td></tr>'
+
+                        epic_value = (
+                            '<table style="width:100%;height:100%;" border="0" cellpadding="0" cellspacing="0">'
+                            f'<tr><td align="center" valign="top" height="15"><b><font style="font-size: 14px;">[{epic.id}]</font></b></td></tr>'
+                            f'<tr><td align="center" valign="middle">{epic.title}</td></tr>'
+                            f"{status_html}"
+                            "</table>"
+                        )
 
                         DrawioRenderer._create_cell(
                             root=root,
@@ -162,12 +183,25 @@ class DrawioRenderer:
                             y=epic.y,
                             width=epic.width,
                             height=epic.height,
-                            style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_epic};strokeColor=#d6b656;size=15;",
+                            style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_epic};strokeColor=#d6b656;size=15;spacingTop=2;",
                             url=epic.url,
                         )
 
         tree = ET.ElementTree(mxfile)
         tree.write(output_path, encoding="utf-8", xml_declaration=True)
+
+    @staticmethod
+    def _get_status_color(status: str) -> str:
+        s = status.lower()
+        if "done" in s or "closed" in s or "resolved" in s:
+            return "#008000"  # Green
+        elif "progress" in s or "doing" in s or "active" in s:
+            return "#0000FF"  # Blue
+        elif "to do" in s or "open" in s or "todo" in s or "new" in s:
+            return "#666666"  # Gray
+        elif "blocked" in s or "impediment" in s:
+            return "#FF0000"  # Red
+        return "#333333"
 
     @staticmethod
     def _create_cell(

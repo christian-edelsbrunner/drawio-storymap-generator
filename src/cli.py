@@ -8,6 +8,7 @@ import yaml
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src.adapters.yaml_parser import YamlParser, StoryMapParseError
+from src.adapters.jira_csv_parser import JiraCsvParser
 from src.layout.engine import LayoutEngine
 from src.adapters.drawio_renderer import DrawioRenderer
 
@@ -18,6 +19,19 @@ def main():
     )
     parser.add_argument(
         "--input", "-i", required=True, help="Path to the input YAML file."
+    )
+    parser.add_argument(
+        "--input-format",
+        required=False,
+        choices=["yaml", "jira-csv"],
+        default="yaml",
+        help="Input format: 'yaml' (default) or 'jira-csv'.",
+    )
+    parser.add_argument(
+        "--hierarchy-issue-types",
+        required=False,
+        default="Initiative,Epic,Story,Task",
+        help="Comma-separated Jira issue types for hierarchy levels.",
     )
     parser.add_argument(
         "--output",
@@ -37,6 +51,7 @@ def main():
     input_path = args.input
     output_path = args.output
     theme_path = args.theme
+    input_format = args.input_format
 
     if not output_path:
         base_name = os.path.splitext(os.path.basename(input_path))[0]
@@ -51,8 +66,15 @@ def main():
         sys.exit(1)
 
     try:
-        print(f"Parsing YAML file: {input_path}")
-        workspace = YamlParser.parse(input_path)
+        if input_format == "jira-csv":
+            print(f"Parsing Jira CSV file: {input_path}")
+            hierarchy_issue_types = [
+                t.strip() for t in args.hierarchy_issue_types.split(",")
+            ]
+            workspace = JiraCsvParser.parse(input_path, hierarchy_issue_types)
+        else:
+            print(f"Parsing YAML file: {input_path}")
+            workspace = YamlParser.parse(input_path)
 
         if theme_path:
             print(f"Loading theme from: {theme_path}")

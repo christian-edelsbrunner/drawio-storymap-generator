@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the CLI tool by passing an input YAML file.
+Run the CLI tool by passing an input file.
 
 ```bash
 # Generate a diagram from the sample file
@@ -64,6 +64,12 @@ python src/cli.py --input sample.yaml
 
 # Specify a custom output file name
 python src/cli.py --input sample.yaml --output my_product_map.drawio
+
+# Generate from Jira CSV export (pipe-delimited)
+python src/cli.py --input jira_export.csv --input-format jira-csv
+
+# Configure hierarchy issue types (Level0,Level1,Level2,Level3)
+python src/cli.py --input jira_export.csv --input-format jira-csv --hierarchy-issue-types Initiative,Epic,Story,Task
 ```
 
 The resulting `.drawio` file can be opened directly in [diagrams.net (Draw.io)](https://app.diagrams.net/) or its desktop client.

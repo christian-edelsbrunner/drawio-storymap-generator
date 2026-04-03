@@ -68,9 +68,9 @@ def main():
     try:
         if input_format == "jira-csv":
             print(f"Parsing Jira CSV file: {input_path}")
-            hierarchy_issue_types = [
-                t.strip() for t in args.hierarchy_issue_types.split(",")
-            ]
+            hierarchy_issue_types = JiraCsvParser.normalize_hierarchy_issue_types(
+                args.hierarchy_issue_types
+            )
             workspace = JiraCsvParser.parse(input_path, hierarchy_issue_types)
         else:
             print(f"Parsing YAML file: {input_path}")

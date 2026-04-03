@@ -1,13 +1,13 @@
 import csv
 import re
 from dataclasses import dataclass
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Union
 
 from src.adapters.yaml_parser import StoryMapParseError
 from src.domain.models import Epic, Feature, Goal, Map, Workspace
 
 
-_ISSUE_KEY_PATTERN = re.compile(r"[A-Z][A-Z0-9]+-\d+")
+_ISSUE_KEY_PATTERN = re.compile(r"[A-Z][A-Z0-9]+-\d+", re.IGNORECASE)
 
 
 @dataclass
@@ -25,13 +25,24 @@ class JiraCsvParser:
     def parse(
         file_path: str, hierarchy_issue_types: Optional[List[str]] = None
     ) -> Workspace:
-        issue_types = hierarchy_issue_types or [
-            "Initiative",
-            "Epic",
-            "Story",
-            "Task",
-        ]
-        issue_types = [t.strip() for t in issue_types if t and t.strip()]
+        issue_types = JiraCsvParser.normalize_hierarchy_issue_types(hierarchy_issue_types)
+
+        issues = JiraCsvParser._parse_issues(file_path)
+        maps = JiraCsvParser._build_maps(issues, issue_types)
+        return Workspace(maps=maps)
+
+    @staticmethod
+    def normalize_hierarchy_issue_types(
+        hierarchy_issue_types: Optional[Union[List[str], str]],
+    ) -> List[str]:
+        if hierarchy_issue_types is None:
+            raw_types = ["Initiative", "Epic", "Story", "Task"]
+        elif isinstance(hierarchy_issue_types, str):
+            raw_types = hierarchy_issue_types.split(",")
+        else:
+            raw_types = hierarchy_issue_types
+
+        issue_types = [t.strip() for t in raw_types if t and t.strip()]
 
         if not issue_types:
             raise StoryMapParseError("At least one hierarchy issue type must be provided.")
@@ -39,10 +50,7 @@ class JiraCsvParser:
             raise StoryMapParseError(
                 "Jira import supports up to 4 hierarchy levels (Map -> Goal -> Feature -> Epic)."
             )
-
-        issues = JiraCsvParser._parse_issues(file_path)
-        maps = JiraCsvParser._build_maps(issues, issue_types)
-        return Workspace(maps=maps)
+        return issue_types
 
     @staticmethod
     def _parse_issues(file_path: str) -> Dict[str, _Issue]:
@@ -202,7 +210,7 @@ class JiraCsvParser:
     def _extract_issue_keys(value: str) -> List[str]:
         if not value:
             return []
-        keys = _ISSUE_KEY_PATTERN.findall(value.upper())
+        keys = _ISSUE_KEY_PATTERN.findall(value)
         if keys:
             return keys
         raw_value = value.strip()

@@ -34,6 +34,7 @@ TASK-3|Update Avatar|Done|Task||
     assert map_1.goals[0].features[0].id == "STORY-1"
     assert map_1.goals[0].features[0].epics[0].id == "TASK-1"
     assert map_1.goals[0].features[0].epics[0].status == "To Do"
+    assert len(map_1.goals) == 2
 
     map_2 = workspace.maps[1]
     assert [g.id for g in map_2.goals] == ["EPIC-3"]

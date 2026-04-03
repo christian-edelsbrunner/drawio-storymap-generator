@@ -8,6 +8,7 @@ import yaml
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src.adapters.yaml_parser import YamlParser, StoryMapParseError
+from src.adapters.jira_csv_parser import JiraCsvParser
 from src.layout.engine import LayoutEngine
 from src.adapters.drawio_renderer import DrawioRenderer
 
@@ -18,6 +19,24 @@ def main():
     )
     parser.add_argument(
         "--input", "-i", required=True, help="Path to the input YAML file."
+    )
+    parser.add_argument(
+        "--input-format",
+        required=False,
+        choices=["yaml", "jira-csv"],
+        default="yaml",
+        help="Input format: 'yaml' (default) or 'jira-csv'.",
+    )
+    parser.add_argument(
+        "--hierarchy-issue-types",
+        required=False,
+        default="Initiative,Epic,Story,Task",
+        help="Comma-separated hierarchy levels; use '/' for multiple issue types per level.",
+    )
+    parser.add_argument(
+        "--hierarchy-config",
+        required=False,
+        help="Path to YAML hierarchy config with 'hierarchy_issue_types'.",
     )
     parser.add_argument(
         "--output",
@@ -37,6 +56,7 @@ def main():
     input_path = args.input
     output_path = args.output
     theme_path = args.theme
+    input_format = args.input_format
 
     if not output_path:
         base_name = os.path.splitext(os.path.basename(input_path))[0]
@@ -49,10 +69,30 @@ def main():
     if theme_path and not os.path.exists(theme_path):
         print(f"Error: Theme file '{theme_path}' does not exist.", file=sys.stderr)
         sys.exit(1)
+    if args.hierarchy_config and not os.path.exists(args.hierarchy_config):
+        print(
+            f"Error: Hierarchy config file '{args.hierarchy_config}' does not exist.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     try:
-        print(f"Parsing YAML file: {input_path}")
-        workspace = YamlParser.parse(input_path)
+        if input_format == "jira-csv":
+            print(f"Parsing Jira CSV file: {input_path}")
+            if args.hierarchy_config:
+                hierarchy_issue_types = (
+                    JiraCsvParser.load_hierarchy_issue_types_from_config(
+                        args.hierarchy_config
+                    )
+                )
+            else:
+                hierarchy_issue_types = JiraCsvParser.normalize_hierarchy_issue_types(
+                    args.hierarchy_issue_types
+                )
+            workspace = JiraCsvParser.parse(input_path, hierarchy_issue_types)
+        else:
+            print(f"Parsing YAML file: {input_path}")
+            workspace = YamlParser.parse(input_path)
 
         if theme_path:
             print(f"Loading theme from: {theme_path}")

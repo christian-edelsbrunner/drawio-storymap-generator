@@ -68,3 +68,46 @@ TASK-1|Implement OAuth|To Do|Task|
     assert len(workspace.maps) == 1
     assert workspace.maps[0].id == "EPIC-1"
     assert [goal.id for goal in workspace.maps[0].goals] == ["STORY-1"]
+
+
+def test_parse_jira_csv_supports_multiple_types_per_level(tmp_path):
+    csv_content = """Issue Key|Summary|Status|Issue Type|Outward issue link (relates)|Outward issue link (relates)
+INIT-1|Commerce Platform|In Progress|Initiative|EPIC-1|CAP-1
+EPIC-1|Authentication|To Do|Epic|STORY-1|
+CAP-1|Catalog Backbone|To Do|Capability|STORY-2|
+STORY-1|Login Story|To Do|Story|TASK-1|
+STORY-2|Browse Story|To Do|User Story|TASK-2|
+TASK-1|Build login|To Do|Task||
+TASK-2|Build browse|To Do|Sub-task||
+"""
+    file_path = tmp_path / "jira_multitype.csv"
+    file_path.write_text(csv_content)
+
+    hierarchy = "Initiative,Epic/Capability,Story/User Story,Task/Sub-task"
+    workspace = JiraCsvParser.parse(str(file_path), hierarchy_issue_types=hierarchy)
+
+    assert len(workspace.maps) == 1
+    goals = workspace.maps[0].goals
+    assert [g.id for g in goals] == ["EPIC-1", "CAP-1"]
+    assert goals[0].features[0].epics[0].id == "TASK-1"
+    assert goals[1].features[0].epics[0].id == "TASK-2"
+
+
+def test_load_hierarchy_issue_types_from_config(tmp_path):
+    config_content = """
+hierarchy_issue_types:
+  - ["Initiative"]
+  - ["Epic", "Capability"]
+  - ["Story", "User Story"]
+  - ["Task", "Sub-task"]
+"""
+    config_path = tmp_path / "hierarchy.yaml"
+    config_path.write_text(config_content)
+
+    parsed = JiraCsvParser.load_hierarchy_issue_types_from_config(str(config_path))
+    assert parsed == [
+        ["Initiative"],
+        ["Epic", "Capability"],
+        ["Story", "User Story"],
+        ["Task", "Sub-task"],
+    ]

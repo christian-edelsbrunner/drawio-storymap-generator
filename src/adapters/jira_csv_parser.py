@@ -3,6 +3,8 @@ import re
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Union
 
+import yaml
+
 from src.adapters.yaml_parser import StoryMapParseError
 from src.domain.models import Epic, Feature, Goal, Map, Workspace
 
@@ -23,7 +25,10 @@ class _Issue:
 class JiraCsvParser:
     @staticmethod
     def parse(
-        file_path: str, hierarchy_issue_types: Optional[List[str]] = None
+        file_path: str,
+        hierarchy_issue_types: Optional[
+            Union[str, List[str], List[List[str]]]
+        ] = None,
     ) -> Workspace:
         issue_types = JiraCsvParser.normalize_hierarchy_issue_types(hierarchy_issue_types)
 
@@ -32,17 +37,55 @@ class JiraCsvParser:
         return Workspace(maps=maps)
 
     @staticmethod
-    def normalize_hierarchy_issue_types(
-        hierarchy_issue_types: Optional[Union[List[str], str]],
-    ) -> List[str]:
-        if hierarchy_issue_types is None:
-            raw_types = ["Initiative", "Epic", "Story", "Task"]
-        elif isinstance(hierarchy_issue_types, str):
-            raw_types = hierarchy_issue_types.split(",")
-        else:
-            raw_types = hierarchy_issue_types
+    def load_hierarchy_issue_types_from_config(config_path: str) -> List[List[str]]:
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                config = yaml.safe_load(f)
+        except FileNotFoundError as e:
+            raise StoryMapParseError(f"Hierarchy config file not found: {e}")
+        except yaml.YAMLError as e:
+            raise StoryMapParseError(f"Failed to parse hierarchy config YAML file: {e}")
+        except OSError as e:
+            raise StoryMapParseError(f"Failed to read or parse hierarchy config file: {e}")
 
-        issue_types = [t.strip() for t in raw_types if t and t.strip()]
+        if isinstance(config, dict):
+            hierarchy_data = config.get("hierarchy_issue_types")
+            if hierarchy_data is None:
+                raise StoryMapParseError(
+                    "Hierarchy config must contain 'hierarchy_issue_types'."
+                )
+        else:
+            hierarchy_data = config
+
+        return JiraCsvParser.normalize_hierarchy_issue_types(hierarchy_data)
+
+    @staticmethod
+    def normalize_hierarchy_issue_types(
+        hierarchy_issue_types: Optional[Union[str, List[str], List[List[str]]]],
+    ) -> List[List[str]]:
+        if hierarchy_issue_types is None:
+            raw_types = [["Initiative"], ["Epic"], ["Story"], ["Task"]]
+        elif isinstance(hierarchy_issue_types, str):
+            raw_types = [
+                [part.strip() for part in level.split("/") if part.strip()]
+                for level in hierarchy_issue_types.split(",")
+            ]
+        elif hierarchy_issue_types and all(
+            isinstance(level, list) for level in hierarchy_issue_types
+        ):
+            raw_types = hierarchy_issue_types
+        else:
+            raw_types = [[str(level)] for level in hierarchy_issue_types]
+
+        issue_types: List[List[str]] = []
+        for level in raw_types:
+            cleaned_level: List[str] = []
+            for issue_type in level:
+                candidate = str(issue_type).strip()
+                if candidate and candidate not in cleaned_level:
+                    cleaned_level.append(candidate)
+            if cleaned_level:
+                issue_types.append(cleaned_level)
 
         if not issue_types:
             raise StoryMapParseError("At least one hierarchy issue type must be provided.")
@@ -120,9 +163,17 @@ class JiraCsvParser:
         return issues
 
     @staticmethod
-    def _build_maps(issues: Dict[str, _Issue], issue_types: List[str]) -> List[Map]:
+    def _build_maps(issues: Dict[str, _Issue], issue_types: List[List[str]]) -> List[Map]:
+        normalized_issue_types = [
+            {JiraCsvParser._normalize_issue_type(t) for t in level} for level in issue_types
+        ]
         roots = sorted(
-            [issue for issue in issues.values() if issue.issue_type == issue_types[0]],
+            [
+                issue
+                for issue in issues.values()
+                if JiraCsvParser._normalize_issue_type(issue.issue_type)
+                in normalized_issue_types[0]
+            ],
             key=lambda issue: issue.order,
         )
 
@@ -130,9 +181,13 @@ class JiraCsvParser:
         for root in roots:
             goals = []
             if len(issue_types) >= 2:
-                level_1_issues = JiraCsvParser._linked_by_type(issues, root, issue_types[1])
+                level_1_issues = JiraCsvParser._linked_by_type(
+                    issues, root, normalized_issue_types[1]
+                )
                 goals = [
-                    JiraCsvParser._build_goal(issues, level_1_issue, issue_types)
+                    JiraCsvParser._build_goal(
+                        issues, level_1_issue, issue_types, normalized_issue_types
+                    )
                     for level_1_issue in level_1_issues
                 ]
 
@@ -149,12 +204,21 @@ class JiraCsvParser:
         return maps
 
     @staticmethod
-    def _build_goal(issues: Dict[str, _Issue], issue: _Issue, issue_types: List[str]) -> Goal:
+    def _build_goal(
+        issues: Dict[str, _Issue],
+        issue: _Issue,
+        issue_types: List[List[str]],
+        normalized_issue_types: List[set],
+    ) -> Goal:
         features = []
         if len(issue_types) >= 3:
-            level_2_issues = JiraCsvParser._linked_by_type(issues, issue, issue_types[2])
+            level_2_issues = JiraCsvParser._linked_by_type(
+                issues, issue, normalized_issue_types[2]
+            )
             features = [
-                JiraCsvParser._build_feature(issues, level_2_issue, issue_types)
+                JiraCsvParser._build_feature(
+                    issues, level_2_issue, issue_types, normalized_issue_types
+                )
                 for level_2_issue in level_2_issues
             ]
 
@@ -167,11 +231,16 @@ class JiraCsvParser:
 
     @staticmethod
     def _build_feature(
-        issues: Dict[str, _Issue], issue: _Issue, issue_types: List[str]
+        issues: Dict[str, _Issue],
+        issue: _Issue,
+        issue_types: List[List[str]],
+        normalized_issue_types: List[set],
     ) -> Feature:
         epics = []
         if len(issue_types) >= 4:
-            level_3_issues = JiraCsvParser._linked_by_type(issues, issue, issue_types[3])
+            level_3_issues = JiraCsvParser._linked_by_type(
+                issues, issue, normalized_issue_types[3]
+            )
             epics = [
                 Epic(
                     id=level_3_issue.key,
@@ -191,7 +260,7 @@ class JiraCsvParser:
 
     @staticmethod
     def _linked_by_type(
-        issues: Dict[str, _Issue], source_issue: _Issue, expected_type: str
+        issues: Dict[str, _Issue], source_issue: _Issue, expected_types: set
     ) -> List[_Issue]:
         linked: List[_Issue] = []
         seen = set()
@@ -199,12 +268,17 @@ class JiraCsvParser:
             linked_issue = issues.get(linked_key)
             if (
                 linked_issue
-                and linked_issue.issue_type == expected_type
+                and JiraCsvParser._normalize_issue_type(linked_issue.issue_type)
+                in expected_types
                 and linked_issue.key not in seen
             ):
                 seen.add(linked_issue.key)
                 linked.append(linked_issue)
         return linked
+
+    @staticmethod
+    def _normalize_issue_type(issue_type: str) -> str:
+        return (issue_type or "").strip().lower()
 
     @staticmethod
     def _extract_issue_keys(value: str) -> List[str]:

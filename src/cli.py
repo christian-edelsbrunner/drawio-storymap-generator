@@ -31,7 +31,12 @@ def main():
         "--hierarchy-issue-types",
         required=False,
         default="Initiative,Epic,Story,Task",
-        help="Comma-separated Jira issue types for hierarchy levels.",
+        help="Comma-separated hierarchy levels; use '/' for multiple issue types per level.",
+    )
+    parser.add_argument(
+        "--hierarchy-config",
+        required=False,
+        help="Path to YAML hierarchy config with 'hierarchy_issue_types'.",
     )
     parser.add_argument(
         "--output",
@@ -64,13 +69,26 @@ def main():
     if theme_path and not os.path.exists(theme_path):
         print(f"Error: Theme file '{theme_path}' does not exist.", file=sys.stderr)
         sys.exit(1)
+    if args.hierarchy_config and not os.path.exists(args.hierarchy_config):
+        print(
+            f"Error: Hierarchy config file '{args.hierarchy_config}' does not exist.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     try:
         if input_format == "jira-csv":
             print(f"Parsing Jira CSV file: {input_path}")
-            hierarchy_issue_types = JiraCsvParser.normalize_hierarchy_issue_types(
-                args.hierarchy_issue_types
-            )
+            if args.hierarchy_config:
+                hierarchy_issue_types = (
+                    JiraCsvParser.load_hierarchy_issue_types_from_config(
+                        args.hierarchy_config
+                    )
+                )
+            else:
+                hierarchy_issue_types = JiraCsvParser.normalize_hierarchy_issue_types(
+                    args.hierarchy_issue_types
+                )
             workspace = JiraCsvParser.parse(input_path, hierarchy_issue_types)
         else:
             print(f"Parsing YAML file: {input_path}")

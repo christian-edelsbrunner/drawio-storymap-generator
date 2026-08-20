@@ -32,9 +32,25 @@ def test_drawio_renderer(tmp_path):
     user_obj = root.find(".//UserObject[@id='epic_e1']")
     assert user_obj is not None
     assert user_obj.attrib["link"] == "http://jira/1"
-    assert "<b>[e1]</b><br/>SSO<br/><i>Done</i>" in user_obj.attrib["label"]
 
-    # Find the Goal mxCell
+    label = user_obj.attrib["label"]
+    # Jira-card style: title text is present, plus status + ID pills.
+    assert "SSO" in label
+    assert "[e1]" in label
+    assert "Done" in label
+    # Atlassian "Done" lozenge colors
+    assert "#E3FCEF" in label  # green background
+    assert "#006644" in label  # green foreground
+    # ID pill uses Atlassian link blue
+    assert "#DEEBFF" in label
+    assert "#0747A6" in label
+
+    # Find the Goal mxCell - should also use Jira-card style
     goal_cell = root.find(".//mxCell[@id='goal_g1']")
     assert goal_cell is not None
-    assert "Users" in goal_cell.attrib["value"]
+    goal_label = goal_cell.attrib["value"]
+    assert "Users" in goal_label
+    assert "[g1]" in goal_label
+    # Goal card style should be rounded (not shape=note anymore)
+    assert "rounded=1" in goal_cell.attrib["style"]
+    assert "shape=note" not in goal_cell.attrib["style"]

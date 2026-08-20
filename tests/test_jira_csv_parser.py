@@ -93,6 +93,100 @@ TASK-2|Build browse|To Do|Sub-task||
     assert goals[1].features[0].epics[0].id == "TASK-2"
 
 
+def test_parse_jira_csv_sets_urls_when_base_url_provided(tmp_path):
+    csv_content = """Issue Key|Summary|Status|Issue Type|Outward issue link (relates)
+INIT-1|Root|In Progress|Initiative|EPIC-1
+EPIC-1|Auth|To Do|Epic|STORY-1
+STORY-1|Login|To Do|Story|
+"""
+    file_path = tmp_path / "jira_urls.csv"
+    file_path.write_text(csv_content)
+
+    # Trailing slash should be normalized so both forms produce the same URL.
+    workspace = JiraCsvParser.parse(
+        str(file_path),
+        hierarchy_issue_types=["Initiative", "Epic", "Story"],
+        jira_base_url="https://jira.example.com/browse",
+    )
+
+    root_map = workspace.maps[0]
+    assert root_map.url == "https://jira.example.com/browse/INIT-1"
+    assert root_map.goals[0].url == "https://jira.example.com/browse/EPIC-1"
+    assert root_map.goals[0].features[0].url == "https://jira.example.com/browse/STORY-1"
+
+
+def test_parse_jira_csv_leaves_urls_none_without_base_url(tmp_path):
+    csv_content = """Issue Key|Summary|Status|Issue Type|Outward issue link (relates)
+INIT-1|Root|In Progress|Initiative|EPIC-1
+EPIC-1|Auth|To Do|Epic|
+"""
+    file_path = tmp_path / "jira_no_urls.csv"
+    file_path.write_text(csv_content)
+
+    workspace = JiraCsvParser.parse(
+        str(file_path),
+        hierarchy_issue_types=["Initiative", "Epic"],
+    )
+
+    assert workspace.maps[0].url is None
+    assert workspace.maps[0].goals[0].url is None
+
+
+def test_parse_jira_csv_treats_relates_as_undirected(tmp_path):
+    # The Jira "relates" link is symmetric; the CSV export splits it into
+    # inward/outward columns depending on which side created the link.
+    # Traversal must follow both directions so that a child linking "up" to
+    # its parent (only inward on the parent's row) is still reachable when
+    # descending from the parent.
+    csv_content = """Issue Key|Summary|Status|Issue Type|Inward issue link (Relates)|Outward issue link (Relates)
+INIT-1|Root|In Progress|Initiative|EPIC-1|EPIC-2
+EPIC-1|Goal via inward|To Do|Epic||STORY-1
+EPIC-2|Goal via outward|To Do|Epic||STORY-2
+STORY-1|Feature A|To Do|Story||
+STORY-2|Feature B|To Do|Story||
+"""
+    file_path = tmp_path / "jira_inward.csv"
+    file_path.write_text(csv_content)
+
+    workspace = JiraCsvParser.parse(
+        str(file_path),
+        hierarchy_issue_types=["Initiative", "Epic", "Story"],
+    )
+
+    assert len(workspace.maps) == 1
+    goals = workspace.maps[0].goals
+    # Both EPIC-1 (reached via inward link on INIT-1) and EPIC-2 (via outward)
+    # must appear as goals under the initiative.
+    assert [g.id for g in goals] == ["EPIC-1", "EPIC-2"]
+    assert goals[0].features[0].id == "STORY-1"
+    assert goals[1].features[0].id == "STORY-2"
+
+
+def test_parse_jira_csv_fails_on_epic_linked_from_multiple_parents(tmp_path):
+    csv_content = """Issue Key|Summary|Status|Issue Type|Outward issue link (relates)|Outward issue link (relates)
+INIT-1|Root|In Progress|Initiative|EPIC-1|EPIC-2
+EPIC-1|Goal A|To Do|Epic|STORY-1|
+EPIC-2|Goal B|To Do|Epic|STORY-2|
+STORY-1|Feature A|To Do|Story|TASK-1|
+STORY-2|Feature B|To Do|Story|TASK-1|
+TASK-1|Shared Epic|To Do|Task||
+"""
+    file_path = tmp_path / "jira_dup.csv"
+    file_path.write_text(csv_content)
+
+    with pytest.raises(StoryMapParseError) as excinfo:
+        JiraCsvParser.parse(
+            str(file_path),
+            hierarchy_issue_types=["Initiative", "Epic", "Story", "Task"],
+        )
+
+    message = str(excinfo.value)
+    assert "duplicate Draw.io node IDs" in message
+    assert "Epic 'TASK-1'" in message
+    assert "INIT-1 > EPIC-1 > STORY-1" in message
+    assert "INIT-1 > EPIC-2 > STORY-2" in message
+
+
 def test_load_hierarchy_issue_types_from_config(tmp_path):
     config_content = """
 hierarchy_issue_types:

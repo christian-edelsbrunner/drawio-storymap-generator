@@ -67,8 +67,8 @@ class Map(LayoutMixin):
 class Theme:
     """Styling and layout configuration."""
 
-    card_width: int = 120
-    card_height: int = 120
+    card_width: int = 160
+    card_height: int = 160
     padding_x: int = 20
     padding_y: int = 20
     header_height: int = 60

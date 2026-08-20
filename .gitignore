@@ -5,3 +5,7 @@ __pycache__/
 *.drawio
 *.dtmp
 huge_map.yaml
+# BeMind per-project agent state
+.bemind/
+export.csv
+temp/

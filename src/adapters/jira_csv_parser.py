@@ -18,7 +18,7 @@ class _Issue:
     summary: str
     status: Optional[str]
     issue_type: str
-    outward_links: List[str]
+    related_links: List[str]
     order: int
 
 
@@ -29,12 +29,28 @@ class JiraCsvParser:
         hierarchy_issue_types: Optional[
             Union[str, List[str], List[List[str]]]
         ] = None,
+        jira_base_url: Optional[str] = None,
     ) -> Workspace:
         issue_types = JiraCsvParser.normalize_hierarchy_issue_types(hierarchy_issue_types)
 
         issues = JiraCsvParser._parse_issues(file_path)
-        maps = JiraCsvParser._build_maps(issues, issue_types)
+        base_url = JiraCsvParser._normalize_base_url(jira_base_url)
+        maps = JiraCsvParser._build_maps(issues, issue_types, base_url)
+        JiraCsvParser._assert_unique_ids(maps)
         return Workspace(maps=maps)
+
+    @staticmethod
+    def _normalize_base_url(base_url: Optional[str]) -> Optional[str]:
+        if not base_url:
+            return None
+        # Ensure exactly one trailing slash so f"{base}{key}" always works.
+        return base_url.rstrip("/") + "/"
+
+    @staticmethod
+    def _issue_url(base_url: Optional[str], issue_key: str) -> Optional[str]:
+        if not base_url or not issue_key:
+            return None
+        return f"{base_url}{issue_key}"
 
     @staticmethod
     def load_hierarchy_issue_types_from_config(config_path: str) -> List[List[str]]:
@@ -121,10 +137,15 @@ class JiraCsvParser:
         status_idx = _find_required_column("Status")
         issue_type_idx = _find_required_column("Issue Type")
 
-        outward_link_indexes = [
+        # Jira's "relates" link is symmetric but the CSV export splits it into
+        # inward/outward columns depending on which side created the link. To
+        # traverse the story-map hierarchy correctly we treat both directions
+        # as the same undirected "related" edge.
+        related_link_indexes = [
             i
             for i, header in enumerate(header_lower)
-            if header == "outward issue link (relates)"
+            if header
+            in ("outward issue link (relates)", "inward issue link (relates)")
         ]
 
         issues: Dict[str, _Issue] = {}
@@ -142,28 +163,32 @@ class JiraCsvParser:
             if not issue_type:
                 continue
 
-            outward_links: List[str] = []
+            related_links: List[str] = []
             seen = set()
-            for link_idx in outward_link_indexes:
+            for link_idx in related_link_indexes:
                 link_cell = JiraCsvParser._cell(row, link_idx)
                 for linked_key in JiraCsvParser._extract_issue_keys(link_cell):
                     if linked_key not in seen:
                         seen.add(linked_key)
-                        outward_links.append(linked_key)
+                        related_links.append(linked_key)
 
             issues[key] = _Issue(
                 key=key,
                 summary=summary,
                 status=status,
                 issue_type=issue_type,
-                outward_links=outward_links,
+                related_links=related_links,
                 order=order,
             )
 
         return issues
 
     @staticmethod
-    def _build_maps(issues: Dict[str, _Issue], issue_types: List[List[str]]) -> List[Map]:
+    def _build_maps(
+        issues: Dict[str, _Issue],
+        issue_types: List[List[str]],
+        base_url: Optional[str] = None,
+    ) -> List[Map]:
         normalized_issue_types = [
             {JiraCsvParser._normalize_issue_type(t) for t in level} for level in issue_types
         ]
@@ -186,7 +211,8 @@ class JiraCsvParser:
                 )
                 goals = [
                     JiraCsvParser._build_goal(
-                        issues, level_1_issue, issue_types, normalized_issue_types
+                        issues, level_1_issue, issue_types, normalized_issue_types,
+                        base_url,
                     )
                     for level_1_issue in level_1_issues
                 ]
@@ -196,6 +222,7 @@ class JiraCsvParser:
                     id=root.key,
                     title=root.summary or root.key,
                     description=None,
+                    url=JiraCsvParser._issue_url(base_url, root.key),
                     goals=goals,
                     releases=[],
                 )
@@ -209,6 +236,7 @@ class JiraCsvParser:
         issue: _Issue,
         issue_types: List[List[str]],
         normalized_issue_types: List[set],
+        base_url: Optional[str] = None,
     ) -> Goal:
         features = []
         if len(issue_types) >= 3:
@@ -217,7 +245,8 @@ class JiraCsvParser:
             )
             features = [
                 JiraCsvParser._build_feature(
-                    issues, level_2_issue, issue_types, normalized_issue_types
+                    issues, level_2_issue, issue_types, normalized_issue_types,
+                    base_url,
                 )
                 for level_2_issue in level_2_issues
             ]
@@ -226,6 +255,7 @@ class JiraCsvParser:
             id=issue.key,
             title=issue.summary or issue.key,
             status=issue.status,
+            url=JiraCsvParser._issue_url(base_url, issue.key),
             features=features,
         )
 
@@ -235,6 +265,7 @@ class JiraCsvParser:
         issue: _Issue,
         issue_types: List[List[str]],
         normalized_issue_types: List[set],
+        base_url: Optional[str] = None,
     ) -> Feature:
         epics = []
         if len(issue_types) >= 4:
@@ -246,6 +277,7 @@ class JiraCsvParser:
                     id=level_3_issue.key,
                     title=level_3_issue.summary or level_3_issue.key,
                     status=level_3_issue.status,
+                    url=JiraCsvParser._issue_url(base_url, level_3_issue.key),
                     release="Unassigned",
                 )
                 for level_3_issue in level_3_issues
@@ -255,6 +287,7 @@ class JiraCsvParser:
             id=issue.key,
             title=issue.summary or issue.key,
             status=issue.status,
+            url=JiraCsvParser._issue_url(base_url, issue.key),
             epics=epics,
         )
 
@@ -264,7 +297,7 @@ class JiraCsvParser:
     ) -> List[_Issue]:
         linked: List[_Issue] = []
         seen = set()
-        for linked_key in source_issue.outward_links:
+        for linked_key in source_issue.related_links:
             linked_issue = issues.get(linked_key)
             if (
                 linked_issue
@@ -275,6 +308,52 @@ class JiraCsvParser:
                 seen.add(linked_issue.key)
                 linked.append(linked_issue)
         return linked
+
+    @staticmethod
+    def _assert_unique_ids(maps: List[Map]) -> None:
+        """Fail fast if the same Jira issue is linked from multiple parents.
+
+        The Draw.io renderer emits one node per Goal/Feature/Epic keyed on the
+        Jira issue key. If a child is linked from multiple parents the parser
+        would otherwise silently produce duplicate node IDs, which Draw.io
+        rejects on load. We surface the collision with the parents involved so
+        the source data can be cleaned up.
+        """
+        # level_label -> child_id -> list of parent paths that reference it
+        collisions: Dict[str, Dict[str, List[str]]] = {
+            "Goal": {},
+            "Feature": {},
+            "Epic": {},
+        }
+
+        for map_ in maps:
+            for goal in map_.goals:
+                collisions["Goal"].setdefault(goal.id, []).append(map_.id)
+                for feature in goal.features:
+                    collisions["Feature"].setdefault(feature.id, []).append(
+                        f"{map_.id} > {goal.id}"
+                    )
+                    for epic in feature.epics:
+                        collisions["Epic"].setdefault(epic.id, []).append(
+                            f"{map_.id} > {goal.id} > {feature.id}"
+                        )
+
+        lines: List[str] = []
+        for level, entries in collisions.items():
+            for child_id, parents in entries.items():
+                if len(parents) > 1:
+                    lines.append(
+                        f"  - {level} '{child_id}' is linked from {len(parents)} parents: "
+                        + "; ".join(parents)
+                    )
+
+        if lines:
+            raise StoryMapParseError(
+                "Jira CSV contains issues linked from multiple parents, which "
+                "would produce duplicate Draw.io node IDs. Fix the links in "
+                "Jira (or the export) so each child has exactly one parent:\n"
+                + "\n".join(lines)
+            )
 
     @staticmethod
     def _normalize_issue_type(issue_type: str) -> str:

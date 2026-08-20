@@ -1,0 +1,5 @@
+hierarchy_issue_types:
+  - ["E2E-Prozesskette"]
+  - ["Cross-Sectional function"]
+  - ["Use-Case"]
+  - ["Epic"]

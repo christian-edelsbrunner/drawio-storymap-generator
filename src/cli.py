@@ -39,6 +39,15 @@ def main():
         help="Path to YAML hierarchy config with 'hierarchy_issue_types'.",
     )
     parser.add_argument(
+        "--jira-base-url",
+        required=False,
+        help=(
+            "Base URL for Jira issue browsing (e.g. https://jira.company.com/browse/). "
+            "When set, each card links to {base_url}{ISSUE-KEY} in Draw.io. "
+            "Jira-CSV input only. If omitted, cards are not clickable."
+        ),
+    )
+    parser.add_argument(
         "--output",
         "-o",
         required=False,
@@ -89,7 +98,16 @@ def main():
                 hierarchy_issue_types = JiraCsvParser.normalize_hierarchy_issue_types(
                     args.hierarchy_issue_types
                 )
-            workspace = JiraCsvParser.parse(input_path, hierarchy_issue_types)
+            workspace = JiraCsvParser.parse(
+                input_path,
+                hierarchy_issue_types,
+                jira_base_url=args.jira_base_url,
+            )
+            if not args.jira_base_url:
+                print(
+                    "Note: --jira-base-url not provided; cards will not be clickable.",
+                    file=sys.stderr,
+                )
         else:
             print(f"Parsing YAML file: {input_path}")
             workspace = YamlParser.parse(input_path)

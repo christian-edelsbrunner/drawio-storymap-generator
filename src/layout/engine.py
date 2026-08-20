@@ -24,6 +24,7 @@ class LayoutEngine:
         for goal in story_map.goals:
             goal.x = current_x
             goal.y = goal_start_y
+            goal.height = theme.card_height
 
             feature_start_x = current_x
             feature_start_y = goal.y + theme.card_height + theme.padding_y
@@ -33,6 +34,8 @@ class LayoutEngine:
             for feature in goal.features:
                 feature.x = feature_start_x
                 feature.y = feature_start_y
+                feature.width = theme.card_width
+                feature.height = theme.card_height
                 feature_start_x += theme.card_width + theme.padding_x
                 goal_width += theme.card_width + theme.padding_x
 
@@ -105,6 +108,8 @@ class LayoutEngine:
                     epic.y = swimlane_y_positions[release] + epic_index * (
                         theme.card_height + theme.padding_y
                     )
+                    epic.width = theme.card_width
+                    epic.height = theme.card_height
                     epic_counts[release] = epic_index + 1
 
         story_map.width = current_x - theme.padding_x - story_map.x

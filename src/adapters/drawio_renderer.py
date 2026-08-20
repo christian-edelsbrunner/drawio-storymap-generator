@@ -1,7 +1,39 @@
 # @ai-generated: gemini-3.1-pro
+import html
 import xml.etree.ElementTree as ET
-import os
+from typing import Optional
+
 from src.domain.models import Workspace
+
+
+# Atlassian native "lozenge" palette used for Jira status pills.
+# Keys are lowercase substrings matched against the status text.
+_STATUS_PALETTE = {
+    "done":       {"bg": "#E3FCEF", "fg": "#006644"},
+    "closed":     {"bg": "#E3FCEF", "fg": "#006644"},
+    "resolved":   {"bg": "#E3FCEF", "fg": "#006644"},
+    "progress":   {"bg": "#DEEBFF", "fg": "#0747A6"},
+    "doing":      {"bg": "#DEEBFF", "fg": "#0747A6"},
+    "active":     {"bg": "#DEEBFF", "fg": "#0747A6"},
+    "implementation": {"bg": "#DEEBFF", "fg": "#0747A6"},
+    "development": {"bg": "#DEEBFF", "fg": "#0747A6"},
+    "review":     {"bg": "#EAE6FF", "fg": "#403294"},
+    "testing":    {"bg": "#EAE6FF", "fg": "#403294"},
+    "blocked":    {"bg": "#FFEBE6", "fg": "#BF2600"},
+    "impediment": {"bg": "#FFEBE6", "fg": "#BF2600"},
+    "to do":      {"bg": "#DFE1E6", "fg": "#42526E"},
+    "todo":       {"bg": "#DFE1E6", "fg": "#42526E"},
+    "open":       {"bg": "#DFE1E6", "fg": "#42526E"},
+    "new":        {"bg": "#DFE1E6", "fg": "#42526E"},
+    "backlog":    {"bg": "#DFE1E6", "fg": "#42526E"},
+}
+# Fallback pill used when the status text matches nothing above.
+_STATUS_FALLBACK = {"bg": "#EAE6FF", "fg": "#403294"}
+
+# ID pill uses Atlassian "link" blue so it visually hints clickability
+# even though the Draw.io HTML label subset does not support inline <a>
+# hyperlinks - the whole card is still wrapped in a clickable UserObject.
+_ID_PILL = {"bg": "#DEEBFF", "fg": "#0747A6"}
 
 
 class DrawioRenderer:
@@ -38,16 +70,22 @@ class DrawioRenderer:
         ET.SubElement(root, "mxCell", id="1", parent="0")
 
         for story_map in workspace.maps:
-            # Map Title
+            # Map header - Jira-card style, wider layout since it spans the map
             DrawioRenderer._create_cell(
                 root=root,
                 id=f"map_{story_map.id}",
-                value=f"<b>{story_map.title}</b>",
+                value=DrawioRenderer._jira_card_label(
+                    node_id=story_map.id,
+                    title=story_map.title,
+                    status=None,           # Maps have no status
+                    title_font_size=13,
+                    title_bold=True,
+                ),
                 x=story_map.x,
                 y=story_map.y,
                 width=story_map.width,
                 height=theme.header_height,
-                style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_map};strokeColor=#b3b3b3;size=15;align=center;verticalAlign=middle;fontSize=16;",
+                style=DrawioRenderer._card_style(fill=theme.color_map),
                 url=story_map.url,
             )
 
@@ -61,9 +99,7 @@ class DrawioRenderer:
                 + theme.card_height
                 + theme.padding_y
                 + theme.swimlane_margin
-            )  # Based on Layout Engine (HEADER_HEIGHT + padding + goal + padding + feature + padding + SWIMLANE_MARGIN)
-            # We don't have swimlane heights exactly stored, but we can draw a separator line or bounding box based on the epics in it.
-            # To be accurate with heights, we'll iterate through the epics and find max Y in each swimlane.
+            )
 
             swimlane_bounds = {}
             for goal in story_map.goals:
@@ -91,23 +127,22 @@ class DrawioRenderer:
                         - swimlane_bounds[release]["min_y"]
                     )
                 else:
-                    # Fallback if empty swimlane
                     y = current_swimlane_y
                     height = 80
 
-                # Draw Swimlane Name
+                # Swimlane label
                 DrawioRenderer._create_cell(
                     root=root,
                     id=f"swimlane_label_{story_map.id}_{idx}",
-                    value=f"<b>{release}</b>",
+                    value=f"<b>{html.escape(release)}</b>",
                     x=story_map.x,
                     y=y - 30,
                     width=200,
                     height=30,
-                    style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#666666;",
+                    style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#42526E;",
                 )
 
-                # Draw Swimlane Line
+                # Swimlane separator line
                 DrawioRenderer._create_cell(
                     root=root,
                     id=f"swimlane_line_{story_map.id}_{idx}",
@@ -116,92 +151,167 @@ class DrawioRenderer:
                     y=y - 10,
                     width=story_map.width,
                     height=10,
-                    style="shape=line;html=1;strokeWidth=2;strokeColor=#cccccc;dashed=1;",
+                    style="shape=line;html=1;strokeWidth=1;strokeColor=#DFE1E6;dashed=1;",
                 )
                 current_swimlane_y = y + height
 
             # Draw Goals
             for goal in story_map.goals:
-                goal_value = (
-                    '<table style="width:100%;height:100%;" border="0" cellpadding="0" cellspacing="0">'
-                    f'<tr><td align="center" valign="top" height="15"><b><font style="font-size: 16px;">[{goal.id}]</font></b></td></tr>'
-                    f'<tr><td align="center" valign="middle"><b>{goal.title}</b></td></tr>'
-                    "</table>"
-                )
                 DrawioRenderer._create_cell(
                     root=root,
                     id=f"goal_{goal.id}",
-                    value=goal_value,
+                    value=DrawioRenderer._jira_card_label(
+                        node_id=goal.id,
+                        title=goal.title,
+                        status=goal.status,
+                    ),
                     x=goal.x,
                     y=goal.y,
                     width=goal.width,
                     height=goal.height,
-                    style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_goal};strokeColor=#6c8ebf;size=15;spacingTop=2;",
+                    style=DrawioRenderer._card_style(fill=theme.color_goal),
                     url=goal.url,
                 )
 
                 # Draw Features
                 for feature in goal.features:
-                    feature_value = (
-                        '<table style="width:100%;height:100%;" border="0" cellpadding="0" cellspacing="0">'
-                        f'<tr><td align="center" valign="top" height="15"><b><font style="font-size: 14px;">[{feature.id}]</font></b></td></tr>'
-                        f'<tr><td align="center" valign="middle"><b>{feature.title}</b></td></tr>'
-                        "</table>"
-                    )
                     DrawioRenderer._create_cell(
                         root=root,
                         id=f"feature_{feature.id}",
-                        value=feature_value,
+                        value=DrawioRenderer._jira_card_label(
+                            node_id=feature.id,
+                            title=feature.title,
+                            status=feature.status,
+                        ),
                         x=feature.x,
                         y=feature.y,
                         width=feature.width,
                         height=feature.height,
-                        style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_feature};strokeColor=#82b366;size=15;spacingTop=2;",
+                        style=DrawioRenderer._card_style(fill=theme.color_feature),
                         url=feature.url,
                     )
 
                     # Draw Epics
                     for epic in feature.epics:
-                        status_html = ""
-                        if epic.status:
-                            status_color = DrawioRenderer._get_status_color(epic.status)
-                            status_html = f'<tr><td align="right" valign="bottom" height="15"><font color="{status_color}"><i>{epic.status}</i></font></td></tr>'
-
-                        epic_value = (
-                            '<table style="width:100%;height:100%;" border="0" cellpadding="0" cellspacing="0">'
-                            f'<tr><td align="center" valign="top" height="15"><b><font style="font-size: 14px;">[{epic.id}]</font></b></td></tr>'
-                            f'<tr><td align="center" valign="middle">{epic.title}</td></tr>'
-                            f"{status_html}"
-                            "</table>"
-                        )
-
                         DrawioRenderer._create_cell(
                             root=root,
                             id=f"epic_{epic.id}",
-                            value=epic_value,
+                            value=DrawioRenderer._jira_card_label(
+                                node_id=epic.id,
+                                title=epic.title,
+                                status=epic.status,
+                            ),
                             x=epic.x,
                             y=epic.y,
                             width=epic.width,
                             height=epic.height,
-                            style=f"shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor={theme.color_epic};strokeColor=#d6b656;size=15;spacingTop=2;",
+                            style=DrawioRenderer._card_style(fill=theme.color_epic),
                             url=epic.url,
                         )
 
         tree = ET.ElementTree(mxfile)
         tree.write(output_path, encoding="utf-8", xml_declaration=True)
 
+    # ------------------------------------------------------------------
+    # Label / style helpers (Jira-card look)
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _jira_card_label(
+        node_id: str,
+        title: str,
+        status: Optional[str] = None,
+        title_font_size: int = 10,
+        title_bold: bool = True,
+    ) -> str:
+        """Render a Jira/Miro-style card label as a Draw.io HTML fragment.
+
+        Structure (all inside a <table> because Draw.io's label HTML subset
+        does not honour block-level layout otherwise):
+
+          - Row 1: card title, left-aligned, dark text.
+          - Row 2: status pill (if present).
+          - Row 3: Jira-ID pill (if present).
+
+        Draw.io labels only support ONE URL per node (the enclosing
+        UserObject), so the ID pill is a visual affordance - the entire
+        card is what actually navigates on click.
+        """
+        safe_title = html.escape(title or "")
+        safe_id = html.escape(node_id or "")
+
+        title_style = (
+            f"font-size:{title_font_size}px;"
+            f"color:#172B4D;"
+            f"line-height:1.25;"
+            + ("font-weight:600;" if title_bold else "")
+        )
+        title_html = f'<div style="{title_style}">{safe_title}</div>'
+
+        # Each pill lives on its own line. We use separate divs (not a
+        # flexbox / not comma-separated) because Draw.io's label HTML subset
+        # honours block-level <div> line breaks reliably.
+        rows_html = [title_html]
+        if status:
+            rows_html.append(
+                '<div style="margin-top:4px;line-height:1.4;">'
+                + DrawioRenderer._pill_html(status, _status_pill(status))
+                + "</div>"
+            )
+        if safe_id:
+            rows_html.append(
+                '<div style="margin-top:2px;line-height:1.4;">'
+                + DrawioRenderer._pill_html(f"[{safe_id}]", _ID_PILL)
+                + "</div>"
+            )
+
+        # Table wrapper keeps vertical spacing predictable across Draw.io
+        # versions (some ignore margins on top-level divs inside a label).
+        return (
+            '<table style="width:100%;height:100%;" border="0" cellpadding="2" cellspacing="0">'
+            f'<tr><td align="left" valign="top">{"".join(rows_html)}</td></tr>'
+            "</table>"
+        )
+
+    @staticmethod
+    def _pill_html(text: str, palette: dict) -> str:
+        return (
+            f'<span style="'
+            f'background:{palette["bg"]};'
+            f'color:{palette["fg"]};'
+            f'padding:1px 6px;'
+            f'border-radius:3px;'
+            f'font-size:9px;'
+            f'font-weight:600;'
+            f'letter-spacing:0.3px;'
+            f'text-transform:uppercase;'
+            f'">'
+            f"{html.escape(text)}</span>"
+        )
+
+    @staticmethod
+    def _card_style(fill: str) -> str:
+        """Common Jira-card mxCell style: white-ish fill, subtle border, rounded."""
+        return (
+            "rounded=1;"
+            "whiteSpace=wrap;"
+            "html=1;"
+            f"fillColor={fill};"
+            "strokeColor=#DFE1E6;"
+            "strokeWidth=1;"
+            "shadow=0;"
+            "align=left;"
+            "verticalAlign=top;"
+            "spacing=4;"
+            "arcSize=8;"
+        )
+
+    # ------------------------------------------------------------------
+    # Legacy helper kept for backwards compatibility (was public-ish).
+    # ------------------------------------------------------------------
     @staticmethod
     def _get_status_color(status: str) -> str:
-        s = status.lower()
-        if "done" in s or "closed" in s or "resolved" in s:
-            return "#008000"  # Green
-        elif "progress" in s or "doing" in s or "active" in s:
-            return "#0000FF"  # Blue
-        elif "to do" in s or "open" in s or "todo" in s or "new" in s:
-            return "#666666"  # Gray
-        elif "blocked" in s or "impediment" in s:
-            return "#FF0000"  # Red
-        return "#333333"
+        palette = _status_pill(status)
+        return palette["fg"]
 
     @staticmethod
     def _create_cell(
@@ -213,7 +323,7 @@ class DrawioRenderer:
         width: int,
         height: int,
         style: str,
-        url: str = None,
+        url: Optional[str] = None,
     ):
         if url:
             # Wrap with UserObject for clickable links
@@ -230,3 +340,13 @@ class DrawioRenderer:
             cell, "mxGeometry", x=str(x), y=str(y), width=str(width), height=str(height)
         )
         geometry.set("as", "geometry")
+
+
+def _status_pill(status: str) -> dict:
+    if not status:
+        return _STATUS_FALLBACK
+    s = status.lower()
+    for keyword, palette in _STATUS_PALETTE.items():
+        if keyword in s:
+            return palette
+    return _STATUS_FALLBACK
